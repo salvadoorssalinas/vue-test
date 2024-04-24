@@ -10,6 +10,7 @@ import 'primeicons/primeicons.css';
 import Toolbar from 'primevue/toolbar';
 import Button from 'primevue/button';
 import Sidebar from "primevue/sidebar";
+import Card from "primevue/card";
 //Router
 import router from './router/index.js'
 
@@ -18,5 +19,6 @@ app.use(PrimeVue, {ripple: true});
 app.component('pv-toolbar', Toolbar)
 app.component('pv-button', Button)
 app.component('pv-sidebar', Sidebar)
+app.component('pv-card', Card)
 app.use(router);
 app.mount('#app')

@@ -14,6 +14,7 @@ const toggleSidebar = () => {
 <template>
   <header-toolbar :toggleSidebar="toggleSidebar"/>
   <sidebar :visible="visible" />
+  <router-view></router-view>
 </template>
 
 <style scoped>
