@@ -1,7 +1,22 @@
-# Vue 3 + Vite
+# Web Applications
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## About the Project
 
-## Recommended IDE Setup
+This project is a web application that uses Vue.js and PrimeVue. 
+The application consists in a transport app that helps clients to know
+more transparently the process of the transport of their goods.
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## Modules Installation
+
+```bash
+npm install
+```
+
+```bash
+npm install primevue primeicons
+```
+
+```bash
+npm install vue-router@latest
+```
+
