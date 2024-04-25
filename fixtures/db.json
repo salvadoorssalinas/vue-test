@@ -1,0 +1,46 @@
+{
+  "trips": [
+    {
+      "id": 1,
+      "nombre": "Viaje #MA251",
+      "fecha_carga": "24-03-2024 05:05:46 AM",
+      "fecha_descarga": "26-03-2024 06:58:10 AM",
+      "lugar_carga": "Av. La Playa km 2 - Ventanilla",
+      "lugar_descarga": "Carretera Central km 141 - Morococha",
+      "conductor": "Juan Perez",
+      "placa_carreta": "A1B-234",
+      "placa_tracto": "EF3-TD3",
+      "empresa": "Transportes Semarfe S.A.C.",
+      "ruc": "20545246949",
+      "imagen_empresa": "https://i.postimg.cc/RVg6k4RG/logo.png"
+    },
+    {
+      "id": 2,
+      "nombre": "Viaje #SE620",
+      "fecha_carga": "28-03-2024 07:10:15 PM",
+      "fecha_descarga": "29-03-2024 04:01:40 AM",
+      "lugar_carga": "Av. La Playa km 2 - Ventanilla",
+      "lugar_descarga": "Av. Los Faisanes 761 - Lurin",
+      "conductor": "Luis Ramirez",
+      "placa_carreta": "M1P-047",
+      "placa_tracto": "G3E-ML0",
+      "empresa": "Transportes Semarfe S.A.C.",
+      "ruc": "20545246949",
+      "imagen_empresa": "https://i.postimg.cc/RVg6k4RG/logo.png"
+    },
+    {
+      "id": 3,
+      "nombre": "Viaje #MA102",
+      "fecha_carga": "01-04-2024 03:44:00 AM",
+      "fecha_descarga": "03-04-2024 01:32:19 PM",
+      "lugar_carga": "Av. La Cultura 456 - San Bartolomé",
+      "lugar_descarga": "Av. Ramiro Priale 123 - Chosica",
+      "conductor": "Mario López",
+      "placa_carreta": "BME-790",
+      "placa_tracto": "X0A-NBE",
+      "empresa": "Mason Services S.A.C.",
+      "ruc": "20648128307",
+      "imagen_empresa": "https://img.freepik.com/vector-premium/plantilla-silueta-empresa-camiones_183875-933.jpg"
+    }
+  ]
+}
