@@ -1,12 +1,12 @@
 <script>
 import { ref } from 'vue';
-import {TripEntity} from "../model/trip.entity.js";
+import {Trip} from "../model/trip.entity.js";
 
 export default {
   name: "tripcard.component",
   props: {
     trip: {
-      type: TripEntity,
+      type: Trip,
       required: true
     }
   },

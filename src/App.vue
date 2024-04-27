@@ -18,5 +18,4 @@ const toggleSidebar = () => {
 </template>
 
 <style scoped>
-
 </style>

@@ -1,6 +1,6 @@
 <script>
 import { TripService } from '../services/trip.service.js';
-import { TripEntity } from '../model/trip.entity.js';
+import { Trip } from '../model/trip.entity.js';
 import Tripcard from "./trip-card.component.vue";
 
 export default {
@@ -12,12 +12,12 @@ export default {
     return {
       api: new TripService(),
       trips: [],
-      trip: TripEntity
+      trip: Trip
     }
   },
   created() {
     this.api.getTrips().then(response => {
-      this.trips = response.data.map(trip => new TripEntity(
+      this.trips = response.data.map(trip => new Trip(
           trip.id,
           trip.name,
           trip.load.date,
