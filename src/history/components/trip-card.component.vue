@@ -1,5 +1,4 @@
 <script>
-import { ref } from 'vue';
 import {Trip} from "../model/trip.entity.js";
 
 export default {
@@ -9,18 +8,7 @@ export default {
       type: Trip,
       required: true
     }
-  },
-  setup(props) {
-    const showMore = ref(false);
-    const toggleShowMore = () => {
-      showMore.value = !showMore.value;
-    }
-    return {
-      showMore,
-      toggleShowMore,
-      props
-    }
-  },
+  }
 }
 
 </script>
@@ -28,90 +16,82 @@ export default {
 <template>
   <main>
     <pv-card class="trip-card">
-      <template #title>
-        <h2>{{trip.nombre}}</h2>
-      </template>
       <template #content>
-        <div class="trip-info-item">
-          <img :src="trip.imagenEmpresa" alt="Logo de empresa" width="150px">
+        <div class="title">
+          <h2>{{trip.nombre}}</h2>
         </div>
-        <div class="trip-info">
-          <div class="trip-info-item">
-            <h3>Fecha de carga: </h3>
-            <p>{{trip.fechaCarga}}</p>
-          </div>
-          <div class="trip-info-item">
-            <h3>Fecha de descarga: </h3>
-            <p>{{trip.fechaDescarga}}</p>
-          </div>
-          <div class="trip-info-item">
-            <h3>Empresa: </h3>
-            <p>{{trip.empresa}}</p>
-          </div>
-          <div v-if="showMore" class="oculto">
-            <div class="trip-info-item">
-              <h3>Lugar de carga: </h3>
-              <p>{{trip.lugarCarga}}</p>
-            </div>
-            <div class="trip-info-item">
-              <h3>Lugar de descarga: </h3>
-              <p>{{trip.lugarDescarga}}</p>
-            </div>
-            <div class="trip-info-item">
-              <h3>Conductor: </h3>
-              <p>{{trip.conductor}}</p>
-            </div>
-            <div class="trip-info-item">
-              <h3>Placa de carreta: </h3>
-              <p>{{trip.placaCarreta}}</p>
-            </div>
-            <div class="trip-info-item">
-              <h3>Placa de tracto: </h3>
-              <p>{{trip.placaTracto}}</p>
-            </div>
-            <div class="trip-info-item">
-              <h3>RUC: </h3>
-              <p>{{trip.ruc}}</p>
-            </div>
-          </div>
-          <div class="trip-info-item">
-            <pv-button
-                style="margin: 10px; border-radius: 10px; width: 25%; display: flex;
-                justify-content: center; align-items: center; background-color: #006400;
-                border-color: #005000;"
-                @click="toggleShowMore">
-              <div v-if="showMore">Ver menos</div>
-              <div v-else>Ver más</div>
-            </pv-button>
-          </div>
+        <div class="content-info-preview">
+          <p>FECHA DE CARGA: {{ trip.fechaCarga }}</p>
+          <p>LUGAR DE CARGA: {{ trip.lugarCarga }}</p>
         </div>
       </template>
-
     </pv-card>
+    <router-link :to="{ name: 'DetailTrip', params: { id: trip.id } }">
+      <pv-button label="Ver más" class="btn"></pv-button>
+    </router-link>
   </main>
 </template>
 
 <style scoped>
 
 main {
-  margin: 40px;
-}
-
-h2, h3 {
-  margin-right: 5px;
-  color: #1E3A8A;
+  margin: 40px -70px 4px auto;
+  font-family: "Roboto", sans-serif;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
 }
 
 .trip-card {
-  background-color: rgba(255, 165, 0, 0.58);
+  background-color: #FFA500;
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  max-width: 700px;
 }
 
-.trip-info-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.content-info-preview {
+  position: absolute;
+  margin: -94px 15px 0 170px;
 }
+
+.btn {
+  background-color: #006400;
+  border-radius: 15px;
+  width: 25%;
+  max-width: 320px;
+  margin-left: 250px;
+  margin-top: -25px;
+}
+@media (max-width: 1050px) {
+  main {
+    margin: 40px 2px 4px 110px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  main {
+    margin: 40px 2px 4px 0;
+    width: 100%;
+  }
+  .content-info-preview {
+    margin: -94px 15px 0 210px;
+  }
+  .btn {
+    margin-left: 250px;
+    margin-top: -5px;
+  }
+}
+
+@media (max-width: 450px) {
+  .title {
+    margin-bottom: 30px;
+  }
+  .content-info-preview {
+    margin: -120px 15px 0 170px;
+  }
+}
+
 
 </style>

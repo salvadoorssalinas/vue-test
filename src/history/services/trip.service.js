@@ -8,4 +8,7 @@ export class TripService {
     getTrips() {
         return http.get("trips");
     }
+    getTripByID(id) {
+        return http.get(`trips/${id}`);
+    }
 }
