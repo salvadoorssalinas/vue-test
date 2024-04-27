@@ -20,6 +20,20 @@
         "name": "Transportes Semarfe S.A.C.",
         "ruc": "20545246949",
         "logoUrl": "https://i.postimg.cc/RVg6k4RG/logo.png"
+      },
+      "expenses": {
+        "fuel": {
+          "amount": 297.00,
+          "description": "Se utilizaron 66 litros de Gasolina Diesel para el recorrido de 175 km. El litro está S/. 4.50. Así que el total es: 66 x 4.50 = 297"
+        },
+        "toll": {
+          "amount": 275.00,
+          "description": "Se pasaron por seis peajes en total, los costos respectivos son: 50, 47, 40, 40, 45, 53"
+        },
+        "viatics": {
+          "amount": 400.00,
+          "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 200 cada día al conductor para cubrir hospedaje y alimentación"
+        }
       }
     },
     {
@@ -42,6 +56,20 @@
         "name": "Transportes Semarfe S.A.C.",
         "ruc": "20545246949",
         "logoUrl": "https://i.postimg.cc/RVg6k4RG/logo.png"
+      },
+      "expenses": {
+        "fuel": {
+          "amount": 250.00,
+          "description": "Se utilizaron 60 litros de Gasolina Diesel para el recorrido de 160 km. El litro está S/. 4.50. Así que el total es: 60 x 4.50 = 270"
+        },
+        "toll": {
+          "amount": 200.00,
+          "description": "Se pasaron por cinco peajes en total, los costos respectivos son: 40, 40, 40, 40, 40"
+        },
+        "viatics": {
+          "amount": 300.00,
+          "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 150 cada día al conductor para cubrir hospedaje y alimentación"
+        }
       }
     },
     {
@@ -64,6 +92,20 @@
         "name": "Mason Services S.A.C.",
         "ruc": "20648128307",
         "logoUrl": "https://img.freepik.com/vector-premium/plantilla-silueta-empresa-camiones_183875-933.jpg"
+      },
+      "expenses": {
+        "fuel": {
+          "amount": 315.00,
+          "description": "Se utilizaron 70 litros de Gasolina Diesel para el recorrido de 185 km. El litro está S/. 4.50. Así que el total es: 70 x 4.50 = 315"
+        },
+        "toll": {
+          "amount": 220.00,
+          "description": "Se pasaron por cinco peajes en total, los costos respectivos son: 44, 44, 44, 44, 44"
+        },
+        "viatics": {
+          "amount": 350.00,
+          "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 175 cada día al conductor para cubrir hospedaje y alimentación"
+        }
       }
     }
   ]
