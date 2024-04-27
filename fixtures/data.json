@@ -1,0 +1,70 @@
+{
+  "trips": [
+    {
+      "id": 1,
+      "name": "Viaje #MA251",
+      "load": {
+        "date": "2024-03-24T05:05:46Z",
+        "location": "Av. La Playa km 2 - Ventanilla"
+      },
+      "unload": {
+        "date": "2024-03-26T06:58:10Z",
+        "location": "Carretera Central km 141 - Morococha"
+      },
+      "driver": "Juan Perez",
+      "vehicle": {
+        "trailerPlate": "A1B-234",
+        "tractorPlate": "EF3-TD3"
+      },
+      "company": {
+        "name": "Transportes Semarfe S.A.C.",
+        "ruc": "20545246949",
+        "logoUrl": "https://i.postimg.cc/RVg6k4RG/logo.png"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Viaje #SE620",
+      "load": {
+        "date": "2024-03-28T19:10:15Z",
+        "location": "Av. La Playa km 2 - Ventanilla"
+      },
+      "unload": {
+        "date": "2024-03-29T04:01:40Z",
+        "location": "Av. Los Faisanes 761 - Lurin"
+      },
+      "driver": "Luis Ramirez",
+      "vehicle": {
+        "trailerPlate": "M1P-047",
+        "tractorPlate": "G3E-ML0"
+      },
+      "company": {
+        "name": "Transportes Semarfe S.A.C.",
+        "ruc": "20545246949",
+        "logoUrl": "https://i.postimg.cc/RVg6k4RG/logo.png"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Viaje #MA102",
+      "load": {
+        "date": "2024-04-01T03:44:00Z",
+        "location": "Av. La Cultura 456 - San Bartolomé"
+      },
+      "unload": {
+        "date": "2024-04-03T13:32:19Z",
+        "location": "Av. Ramiro Priale 123 - Chosica"
+      },
+      "driver": "Mario López",
+      "vehicle": {
+        "trailerPlate": "BME-790",
+        "tractorPlate": "X0A-NBE"
+      },
+      "company": {
+        "name": "Mason Services S.A.C.",
+        "ruc": "20648128307",
+        "logoUrl": "https://img.freepik.com/vector-premium/plantilla-silueta-empresa-camiones_183875-933.jpg"
+      }
+    }
+  ]
+}

@@ -19,7 +19,7 @@ fixtures/db.json
 ```
 And activate the fake api route with the command below:
 ```bash
-npx json-server db.json
+npx json-server data.json
 ```
 
 ## Modules Installation

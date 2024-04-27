@@ -33,16 +33,16 @@ export default {
       </template>
       <template #content>
         <div class="trip-info-item">
-          <img :src="trip.imagen_empresa" alt="Logo de empresa" width="150px">
+          <img :src="trip.imagenEmpresa" alt="Logo de empresa" width="150px">
         </div>
         <div class="trip-info">
           <div class="trip-info-item">
             <h3>Fecha de carga: </h3>
-            <p>{{trip.fecha_carga}}</p>
+            <p>{{trip.fechaCarga}}</p>
           </div>
           <div class="trip-info-item">
             <h3>Fecha de descarga: </h3>
-            <p>{{trip.fecha_descarga}}</p>
+            <p>{{trip.fechaDescarga}}</p>
           </div>
           <div class="trip-info-item">
             <h3>Empresa: </h3>
@@ -51,11 +51,11 @@ export default {
           <div v-if="showMore" class="oculto">
             <div class="trip-info-item">
               <h3>Lugar de carga: </h3>
-              <p>{{trip.lugar_carga}}</p>
+              <p>{{trip.lugarCarga}}</p>
             </div>
             <div class="trip-info-item">
               <h3>Lugar de descarga: </h3>
-              <p>{{trip.lugar_descarga}}</p>
+              <p>{{trip.lugarDescarga}}</p>
             </div>
             <div class="trip-info-item">
               <h3>Conductor: </h3>
@@ -63,11 +63,11 @@ export default {
             </div>
             <div class="trip-info-item">
               <h3>Placa de carreta: </h3>
-              <p>{{trip.placa_carreta}}</p>
+              <p>{{trip.placaCarreta}}</p>
             </div>
             <div class="trip-info-item">
               <h3>Placa de tracto: </h3>
-              <p>{{trip.placa_tracto}}</p>
+              <p>{{trip.placaTracto}}</p>
             </div>
             <div class="trip-info-item">
               <h3>RUC: </h3>
