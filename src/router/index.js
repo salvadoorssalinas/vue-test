@@ -3,6 +3,7 @@ import Historylist from "../history/components/history-list.component.vue";
 import ExpenseList from "../expenses/components/expense-list.component.vue";
 import ExpenseDescription from "../expenses/components/expense-description.component.vue"
 import DetailTrip from "../history/components/details-trip.component.vue";
+import barraEstadisticaComponent from "../stadistics/components/barra-estadistica.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,7 +17,9 @@ const router = createRouter({
             name: 'DetailTrip',
             component: () => import('../history/components/details-trip.component.vue'),
             props: true
-        }
+        },
+        { path: '/estadisticas', component: barraEstadisticaComponent}
+
     ]
 });
 
