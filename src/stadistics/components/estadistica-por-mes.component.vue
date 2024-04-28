@@ -6,7 +6,7 @@ import { StadisticService } from "../services/stadistic.service.js";
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
 export default {
-  name: 'BarChart',
+  name: 'Statistics Per Month',
   components: { Bar },
   props:{
     chartId: {
@@ -77,4 +77,5 @@ export default {
 <style scoped>
 
 </style>
+
 
