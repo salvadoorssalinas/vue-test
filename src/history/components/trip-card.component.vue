@@ -1,8 +1,12 @@
 <script>
 import {Trip} from "../model/trip.entity.js";
+import Toolbar from "primevue/toolbar";
 
 export default {
   name: "tripcard.component",
+  components: {
+    Toolbar
+  },
   props: {
     trip: {
       type: Trip,
@@ -35,7 +39,7 @@ export default {
 <style scoped>
 
 main {
-  margin: 40px -70px 4px auto;
+  margin: 40px 0px 4px auto;
   font-family: "Roboto", sans-serif;
   width: 75%;
   display: flex;
