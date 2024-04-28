@@ -1,11 +1,3 @@
-<template>
-  <Bar
-      id="my-chart-id"
-      :options="chartOptions"
-      :data="chartData"
-  />
-</template>
-
 <script>
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
@@ -51,8 +43,38 @@ export default {
     };
   },
   async mounted() {
-    
+    const statisticService = new StadisticService();
+    const response = await statisticService.getTrips();
+    if (response.data) {
+      const trips = response.data;
+
+      // Contar la cantidad de envíos por mes
+      trips.forEach(trip => {
+        const tripDate = new Date(trip.load.date);
+        console.log(tripDate);
+        const monthIndex = tripDate.getMonth();
+        this.chartData.datasets[0].data[monthIndex]++;
+      });
+
+      // Actualizar el gráfico
+      this.$refs.chart.update();
+    } else {
+      console.error('No se encontraron datos de viajes.');
+    }
   }
 };
 </script>
+
+<template>
+  <Bar
+      ref="chart"
+      id="my-chart-id"
+      :options="chartOptions"
+      :data="chartData"
+  />
+</template>
+
+<style scoped>
+
+</style>
 
