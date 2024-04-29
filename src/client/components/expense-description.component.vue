@@ -1,6 +1,6 @@
 <script>
-import {Expense} from "../model/expense.entity.js";
-import {ExpenseService} from "../services/expense.service.js";
+import {Expense} from "../models/expense.entity.js";
+import {TripService} from "../services/trip.service.js";
 
 export default {
   name: "expense-description",
@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       expense: Expense,
-      expenseService: new ExpenseService(),
+      expenseService: new TripService(),
       totalExpenses: 0
     }
   },

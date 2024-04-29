@@ -1,6 +1,6 @@
 <script>
-import { Expense } from "../model/expense.entity.js";
-import { Trip } from "../../trip/model/trip.entity.js";
+import { Expense } from "../models/expense.entity.js";
+import { Trip } from "../models/trip.entity.js";
 import {useRouter} from "vue-router";
 export default {
   name: "expense-card",

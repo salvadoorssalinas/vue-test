@@ -1,11 +1,11 @@
 import {createRouter, createWebHistory} from "vue-router";
-import TripList from "../trip/components/trip-list.component.vue";
-import ExpenseList from "../expenses/components/expense-list.component.vue";
-import ExpenseDescription from "../expenses/components/expense-description.component.vue"
-import TripDescription from "../trip/components/trip-description.component.vue";
-import BarGraph from "../statistics/components/bargraph.component.vue";
-import TravelList from "../gps/components/travel-list.component.vue";
-import Map from "../gps/components/map.component.vue";
+import TripList from "../client/components/trip-list.component.vue";
+import ExpenseList from "../client/components/expense-list.component.vue";
+import ExpenseDescription from "../client/components/expense-description.component.vue"
+import TripDescription from "../client/components/trip-description.component.vue";
+import BarGraph from "../client/components/bargraph.component.vue";
+import TravelList from "../client/components/travel-list.component.vue";
+import Map from "../client/components/map.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),

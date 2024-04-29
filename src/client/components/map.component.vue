@@ -3,8 +3,8 @@
 import { defineComponent, onMounted, onBeforeMount } from 'vue'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
-import {Trip} from "../model/trip.entity.js";
-import {TravelService} from "../services/travel.service.js";
+import { Trip } from "../models/trip.entity.js";
+import {TripService} from "../services/trip.service.js";
 
 export default defineComponent({
   name: 'LMap',
@@ -15,12 +15,12 @@ export default defineComponent({
   },
   data() {
     return {
-      api: new TravelService(),
+      api: new TripService(),
       trip: Trip
     }
   },
   created(){
-    this.api.getTravelByID(this.id).then(response => {
+    this.api.getTripByID(this.id).then(response => {
       this.trip = new Trip(
           response.data.id,
           response.data.name,

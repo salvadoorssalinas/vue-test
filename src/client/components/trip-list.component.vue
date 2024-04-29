@@ -1,6 +1,6 @@
 <script>
 import { TripService } from '../services/trip.service.js';
-import { Trip } from '../model/trip.entity.js';
+import { Trip } from '../models/trip.entity.js';
 import TripCard from "./trip-card.component.vue";
 
 export default {

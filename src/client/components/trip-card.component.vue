@@ -1,5 +1,5 @@
 <script>
-import {Trip} from "../model/trip.entity.js";
+import {Trip} from "../models/trip.entity.js";
 import {useRouter} from "vue-router";
 
 export default {

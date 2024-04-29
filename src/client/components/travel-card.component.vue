@@ -1,6 +1,5 @@
 <script>
-import {Trip} from "../model/trip.entity.js"
-import Toolbar from "primevue/toolbar";
+import {Trip} from "../models/trip.entity.js"
 import {useRouter} from "vue-router";
 
 export default {
@@ -49,12 +48,12 @@ export default {
 
 <style scoped>
 h2{
-  font-family: Roboto, sans-serif;
   color: black;
+  font-family: Roboto, sans-serif;
 }
 p{
-  font-family: Roboto, sans-serif;
   color: black;
+  font-family: Roboto, sans-serif;
 }
 
 .travel-card {

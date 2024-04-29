@@ -1,7 +1,7 @@
 <script>
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
-import { StatisticService } from "../services/statistic.service.js";
+import { TripService } from "../services/trip.service.js";
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
@@ -46,27 +46,21 @@ export default {
 
   async mounted() {
     try {
-      const statisticService = new StatisticService();
+      const statisticService = new TripService();
       const response = await statisticService.getTrips();
-
       if (response.data) {
         const trips = response.data;
-
         // Create an object to store the counts for each location
         const locationCounts = trips.reduce((counts, trip) => {
           const location = trip.unload.location;
           counts[location] = (counts[location] || 0) + 1;
           return counts;
         }, {});
-
-
         // Update the chart data
         this.chartData.labels.push(...Object.keys(locationCounts));
         this.chartData.labels.forEach((label, index) => {
           this.chartData.datasets[0].data[index] = locationCounts[label];
         });
-
-
       } else {
         console.error('No trip data found in the response.');
       }
@@ -74,13 +68,8 @@ export default {
       console.error('Service Error', error);
     }
   }
-
-
-
-
 };
 </script>
-
 
 <template>
   <Bar

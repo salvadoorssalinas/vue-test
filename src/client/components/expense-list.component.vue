@@ -1,7 +1,7 @@
 <script>
 import ExpenseCard from "./expense-card.component.vue";
-import { Trip } from "../../trip/model/trip.entity.js"
-import { ExpenseService } from "../services/expense.service.js";
+import { Trip } from "../models/trip.entity.js"
+import { TripService } from "../services/trip.service.js"
 export default {
   name: "expense-list.component",
   components: {ExpenseCard},
@@ -9,7 +9,7 @@ export default {
     return {
       rawTrips: [],
       trips: [],
-      expenseService: new ExpenseService()
+      expenseService: new TripService()
     };
   },
   created(){

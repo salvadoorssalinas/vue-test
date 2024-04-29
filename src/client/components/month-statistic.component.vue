@@ -1,7 +1,7 @@
 <script>
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
-import { StatisticService } from "../services/statistic.service.js";
+import {TripService} from "../services/trip.service.js";
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
@@ -43,7 +43,7 @@ export default {
     };
   },
   async mounted() {
-    const statisticService = new StatisticService();
+    const statisticService = new TripService();
     const response = await statisticService.getTrips();
     if (response.data) {
       const trips = response.data;
