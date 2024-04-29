@@ -23,8 +23,12 @@
         "loadImage": "https://example.com/cargo_image.jpg",
         "loadDate": "2024-03-24T05:05:46Z",
         "unloadLocation": "Carretera Central km 141 - Morococha",
-        "unloadDate": "2024-03-26T06:58:10Z",
-        "companyName": "Transportes Semarfe S.A.C."
+        "unloadDate": "2024-03-26T06:58:10Z"
+      },
+      "company": {
+        "name": "Transportes Semarfe S.A.C.",
+        "ruc": "20123456789",
+        "logoImage": "https://img.freepik.com/vector-premium/plantilla-silueta-empresa-camiones_183875-933.jpg"
       }
     },
     {
@@ -50,11 +54,15 @@
         "loadImage": "https://example.com/cargo_image2.jpg",
         "loadDate": "2024-04-24T05:05:46Z",
         "unloadLocation": "Carretera Central km 200 - La Oroya",
-        "unloadDate": "2024-04-26T06:58:10Z",
-        "companyName": "Transportes Semarfe S.A.C."
+        "unloadDate": "2024-04-26T06:58:10Z"
+      },
+      "company": {
+        "name": "Transportes Semarfe S.A.C.",
+        "ruc": "20123456789",
+        "logoImage": "https://img.freepik.com/vector-premium/plantilla-silueta-empresa-camiones_183875-933.jpg"
       }
     },
-{
+    {
       "id": 3,
       "name": "Viaje #MA253",
       "driver": {
@@ -77,8 +85,12 @@
         "loadImage": "https://example.com/cargo_image3.jpg",
         "loadDate": "2024-05-24T05:05:46Z",
         "unloadLocation": "Carretera Central km 300 - La Oroya",
-        "unloadDate": "2024-05-26T06:58:10Z",
-        "companyName": "Transportes Semarfe S.A.C."
+        "unloadDate": "2024-05-26T06:58:10Z"
+      },
+      "company": {
+        "name": "Transportes Semarfe S.A.C.",
+        "ruc": "20123456789",
+        "logoImage": "https://img.freepik.com/vector-premium/plantilla-silueta-empresa-camiones_183875-933.jpg"
       }
     }
   ],

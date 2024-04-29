@@ -1,6 +1,7 @@
 <script>
 import {Expense} from "../models/expense.entity.js";
 import {TripService} from "../services/trip.service.js";
+import {ExpenseService} from "../services/expense.service.js";
 
 export default {
   name: "expense-description",
@@ -12,22 +13,26 @@ export default {
   data() {
     return {
       expense: Expense,
-      expenseService: new TripService(),
+      expenseService: new ExpenseService(),
+      tripService: new TripService(),
+      logoURL: "",
       totalExpenses: 0
     }
   },
   created() {
-    this.expenseService.getTripByID(this.id).then(response => {
+    this.expenseService.getExpensesByID(this.id).then(response => {
       this.expense = new Expense(
-          response.data[0].expenses.fuel.amount,
-          response.data[0].expenses.fuel.description,
-          response.data[0].expenses.toll.amount,
-          response.data[0].expenses.toll.description,
-          response.data[0].expenses.viatics.amount,
-          response.data[0].expenses.viatics.description,
-          response.data[0].company.logoUrl
+          response.data[0].fuel.amount,
+          response.data[0].fuel.description,
+          response.data[0].toll.amount,
+          response.data[0].toll.description,
+          response.data[0].viatics.amount,
+          response.data[0].viatics.description,
       );
       this.totalExpenses = this.expense.gasolina + this.expense.peajes + this.expense.viaticos;
+    });
+    this.tripService.getTripByID(this.id).then(response => {
+      this.logoURL = response.data[0].company.logoImage;
     });
   }
 }
@@ -36,7 +41,7 @@ export default {
 <template>
   <h1>Viaje {{ id }}</h1>
   <div class="container">
-    <img :src="expense.imagen" alt="imagen de la empresa">
+    <img :src="this.logoURL" alt="imagen de la empresa">
     <div class="gastos">
       <div class="gasto">
         <div class="gasto-header">

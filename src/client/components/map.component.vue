@@ -24,13 +24,16 @@ export default defineComponent({
       this.trip = new Trip(
           response.data[0].id,
           response.data[0].name,
-          response.data[0].load.date,
-          response.data[0].unload.date,
-          response.data[0].load.location,
-          response.data[0].unload.location,
-          response.data[0].driver,
-          response.data[0].vehicle.trailerPlate,
-          response.data[0].vehicle.tractorPlate
+          response.data[0].cargo.loadDate,
+          response.data[0].cargo.unloadDate,
+          response.data[0].cargo.loadLocation,
+          response.data[0].cargo.unloadLocation,
+          response.data[0].driver.fullName,
+          response.data[0].vehicle.plate,
+          response.data[0].vehicle.tractorPlate,
+          response.data[0].company.name,
+          response.data[0].company.ruc,
+          response.data[0].company.logoImage
       );
     });
   },

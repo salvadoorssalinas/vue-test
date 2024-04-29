@@ -9,26 +9,26 @@ export default {
     return {
       rawTrips: [],
       trips: [],
-      expenseService: new TripService()
+      tripService: new TripService()
     };
   },
   created(){
-    this.expenseService.getTrips().then(response => {
+    this.tripService.getTrips().then(response => {
       this.rawTrips = response.data;
       this.rawTrips.forEach(trip => {
         this.trips.push(new Trip(
               trip.id,
               trip.name,
-              trip.load.date,
-              trip.unload.date,
-              trip.load.location,
-              trip.unload.location,
-              trip.driver,
-              trip.vehicle.trailerPlate,
+              trip.cargo.loadDate,
+              trip.cargo.unloadDate,
+              trip.cargo.loadLocation,
+              trip.cargo.unloadLocation,
+              trip.driver.fullName,
+              trip.vehicle.plate,
               trip.vehicle.tractorPlate,
               trip.company.name,
               trip.company.ruc,
-              trip.company.logoUrl
+              trip.company.logoImage
             )
         );
       });

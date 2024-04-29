@@ -52,7 +52,7 @@ export default {
         const trips = response.data;
         // Create an object to store the counts for each location
         const locationCounts = trips.reduce((counts, trip) => {
-          const location = trip.unload.location;
+          const location = trip.cargo.loadLocation;
           counts[location] = (counts[location] || 0) + 1;
           return counts;
         }, {});
