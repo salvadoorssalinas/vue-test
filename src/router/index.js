@@ -5,6 +5,8 @@ import ExpenseDescription from "../expenses/components/expense-description.compo
 import DetailTrip from "../history/components/details-trip.component.vue";
 import barraEstadisticaComponent from "../stadistics/components/barra-estadistica.component.vue";
 
+import TravelList from "../gps/components/travel-list.component.vue";
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -18,8 +20,14 @@ const router = createRouter({
             component: () => import('../history/components/details-trip.component.vue'),
             props: true
         },
-        { path: '/estadisticas', component: barraEstadisticaComponent}
-
+        { path: '/estadisticas', component: barraEstadisticaComponent},
+        { path: '/gps', component: TravelList},
+        {
+            path: '/gpsTravel/:id',
+            name: 'GpsTravel',
+            component: () => import('../gps/components/map.component.vue'),
+            props: true
+        },
     ]
 });
 
