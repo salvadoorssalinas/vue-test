@@ -8,10 +8,9 @@ import {TravelService} from "../services/travel.service.js";
 
 export default defineComponent({
   name: 'LMap',
-  props: {
-    id: {
-      type: String,
-      required: true
+  computed: {
+    id(){
+      return this.$route.params.id;
     }
   },
   data() {
@@ -59,9 +58,7 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div>
-    <div id="mapContainer" />
-  </div>
+  <div id="mapContainer"></div>
   <main>
   <pv-card class="info-card">
     <template #content>

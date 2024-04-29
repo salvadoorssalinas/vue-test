@@ -6,7 +6,7 @@ import { StatisticService } from "../services/statistic.service.js";
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
 export default {
-  name: "destiny-statistic",
+  name: "destination-statistic",
   components: { Bar },
   props: {
     chartId: {
@@ -33,7 +33,7 @@ export default {
         plugins: {
           title: {
             display: true,
-            text: 'Visualización de Envíos por Destino',
+            text: 'Visualización de envíos por destino',
             font: {
               size: 20
             }
@@ -71,7 +71,7 @@ export default {
         console.error('No trip data found in the response.');
       }
     } catch (error) {
-      console.error('Que paso Master?', error);
+      console.error('Service Error', error);
     }
   }
 

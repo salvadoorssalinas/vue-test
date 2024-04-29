@@ -33,7 +33,7 @@ export default {
         plugins: {
           title: {
             display: true,
-            text: 'Visualización de Envíos por Mes',
+            text: 'Visualización de envíos por mes',
             font: {
               size: 20
             }
@@ -51,13 +51,9 @@ export default {
       // Contar la cantidad de envíos por mes
       trips.forEach(trip => {
         const tripDate = new Date(trip.load.date);
-        console.log(tripDate);
         const monthIndex = tripDate.getMonth();
         this.chartData.datasets[0].data[monthIndex]++;
       });
-
-      // Actualizar el gráfico
-      this.$refs.chart.update();
     } else {
       console.error('No se encontraron datos de viajes.');
     }

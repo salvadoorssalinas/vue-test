@@ -30,11 +30,12 @@ npm install
 
 ```bash
 npm install primevue primeicons
-
+```
 
 ```bash
 npm install vue-router@latest
 ```
+
 ```bash
 npm i vue-chartjs chart.js
 ```

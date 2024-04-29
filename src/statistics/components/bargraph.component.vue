@@ -1,12 +1,11 @@
 <script>
 
 import monthStatistic from "./month-statistic.component.vue";
-import destinyStatistic from "./destiny-statistic.component.vue";
-import DestinyStatistic from "./destiny-statistic.component.vue";
+import destinationStatistic from "./destination-statistic.component.vue";
 
 export default {
   name: 'App',
-  components: {DestinyStatistic, monthStatistic,destinyStatistic },
+  components: {destinationStatistic, monthStatistic },
   data() {
     return {
       showMonthStatistics: true,
@@ -31,56 +30,56 @@ export default {
 </script>
 
 <template>
-  <div class="title-bar">
-    <h1>Estadisticas</h1>
-  </div>
-
-  <div class="main-bar">
+  <h1>Estadísticas</h1>
+  <div class="buttons">
     <div>
-      <pv-button @click="toggleMonthStatistics" :style="{ backgroundColor: showMonthStatistics ? '#9AABDE' : 'white' }">
-        Mostrar estadísticas por mes
-      </pv-button>
-
-      <pv-button @click="toggleDestinationStatistics" :style="{ backgroundColor: showDestinationStatistics ? '#9AABDE' : 'white' }">
-        Mostrar estadísticas por destino
-      </pv-button>
+      <pv-button label="Por mes"
+                 @click="toggleMonthStatistics"
+                 :style="{ backgroundColor: showMonthStatistics ? '#9AABDE' : 'white' }"
+                 class="statistic-buttons"></pv-button>
+      <pv-button label="Por destino"
+                 @click="toggleDestinationStatistics"
+                 :style="{ backgroundColor: showDestinationStatistics ? '#9AABDE' : 'white' }"
+                 class="statistic-buttons"></pv-button>
     </div>
 
     <div class="statistic-per-month" v-show="showMonthStatistics">
       <month-statistic></month-statistic>
     </div>
-    <div class="statistic-per-destiny" v-show="showDestinationStatistics">
-      <destiny-statistic></destiny-statistic>
+    <div class="statistic-per-destination" v-show="showDestinationStatistics">
+      <destination-statistic></destination-statistic>
     </div>
   </div>
-
-
 
 </template>
 
 <style>
-  .title-bar {
-    margin-left: 20px;
-  }
+h1{
+  font-size: 48px;
+  text-align: center;
+}
 
-  .main-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  }
+.statistic-per-month {
+  width: 60%;
+}
 
-  .statistic-per-month {
-    width: 60%;
-  }
+.statistic-per-destination {
+  width: 60%;
+}
 
-  .statistic-per-destiny {
-    width: 60%;
-
-  }
-
-
-
+.statistic-buttons{
+  color: black;
+  font-weight: 500;
+  width: 200px;
+  border: white 1px solid;
+  border-radius: 5px;
+}
 
 
 </style>
