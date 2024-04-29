@@ -30,11 +30,17 @@ npm install
 
 ```bash
 npm install primevue primeicons
-```
+
 
 ```bash
 npm install vue-router@latest
 ```
 ```bash
 npm i vue-chartjs chart.js
+```
+
+## Leaflet (Map)
+Install the required modules:
+```bash
+npm install leaflet
 ```
