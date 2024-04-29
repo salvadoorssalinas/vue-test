@@ -1,18 +1,25 @@
 <script>
 import {Trip} from "../model/trip.entity.js"
 import Toolbar from "primevue/toolbar";
+import {useRouter} from "vue-router";
 
 export default {
   name: "travel-card",
-  components: {
-    Toolbar
-  },
   props: {
     trip: {
       type: Trip,
       required: true
     }
-  }
+  },
+  setup(){
+    const router = useRouter();
+    const goToGPS = (id) => {
+      router.push(`/GPS/${id}`);
+    }
+    return{
+      goToGPS
+    };
+  },
 }
 
 </script>
@@ -30,9 +37,7 @@ export default {
         </div>
       </template>
     </pv-card>
-    <router-link :to="{ name: 'GpsTravel', params: { id: trip.id } }">
-      <pv-button label="Ver GPS" class="btn"></pv-button>
-    </router-link>
+    <pv-button class="btn" @click="goToGPS(trip.id)">Ver GPS</pv-button>
   </main>
 </template>
 

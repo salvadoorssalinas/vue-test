@@ -108,5 +108,19 @@
         }
       }
     }
+  ],
+  "inProgressTrips": [
+    {
+      "id": 4,
+      "name": "Viaje #MA102",
+      "load": {
+        "date": "2024-04-02T03:44:00Z",
+        "location": "Av. La Cultura 456 - San Bartolomé"
+      },
+      "unload": {
+        "location": "Av. Ramiro Priale 123 - Chosica"
+      },
+      "driver": "Mario López"
+    }
   ]
 }
