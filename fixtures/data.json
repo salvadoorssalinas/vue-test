@@ -3,124 +3,148 @@
     {
       "id": 1,
       "name": "Viaje #MA251",
-      "load": {
-        "date": "2024-03-24T05:05:46Z",
-        "location": "Av. La Playa km 2 - Ventanilla"
+      "driver": {
+        "fullName": "Juan Perez",
+        "DNI": "12345678",
+        "license": "B12345678",
+        "contactNumber": "987654321"
       },
-      "unload": {
-        "date": "2024-03-26T06:58:10Z",
-        "location": "Carretera Central km 141 - Morococha"
-      },
-      "driver": "Juan Perez",
       "vehicle": {
-        "trailerPlate": "A1B-234",
-        "tractorPlate": "EF3-TD3"
+        "model": "Volkswagen Transporter",
+        "plate": "A1B-234",
+        "tractorPlate": "EF3-TD3",
+        "maxLoad": 5000,
+        "volume": 20
       },
-      "company": {
-        "name": "Transportes Semarfe S.A.C.",
-        "ruc": "20545246949",
-        "logoUrl": "https://i.postimg.cc/RVg6k4RG/logo.png"
-      },
-      "expenses": {
-        "fuel": {
-          "amount": 297.00,
-          "description": "Se utilizaron 66 litros de Gasolina Diesel para el recorrido de 175 km. El litro está S/. 4.50. Así que el total es: 66 x 4.50 = 297"
-        },
-        "toll": {
-          "amount": 275.00,
-          "description": "Se pasaron por seis peajes en total, los costos respectivos son: 50, 47, 40, 40, 45, 53"
-        },
-        "viatics": {
-          "amount": 400.00,
-          "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 200 cada día al conductor para cubrir hospedaje y alimentación"
-        }
+      "cargo": {
+        "type": "Electronica",
+        "weight": 3000,
+        "loadLocation": "Av. La Playa km 2 - Ventanilla",
+        "loadImage": "https://example.com/cargo_image.jpg",
+        "loadDate": "2024-03-24T05:05:46Z",
+        "unloadLocation": "Carretera Central km 141 - Morococha",
+        "unloadDate": "2024-03-26T06:58:10Z",
+        "companyName": "Transportes Semarfe S.A.C."
       }
     },
     {
       "id": 2,
-      "name": "Viaje #SE620",
-      "load": {
-        "date": "2024-03-28T19:10:15Z",
-        "location": "Av. La Playa km 2 - Ventanilla"
+      "name": "Viaje #MA252",
+      "driver": {
+        "fullName": "Carlos Sanchez",
+        "DNI": "23456789",
+        "license": "C23456789",
+        "contactNumber": "987654322"
       },
-      "unload": {
-        "date": "2024-03-29T04:01:40Z",
-        "location": "Av. Los Faisanes 761 - Lurin"
-      },
-      "driver": "Luis Ramirez",
       "vehicle": {
-        "trailerPlate": "M1P-047",
-        "tractorPlate": "G3E-ML0"
+        "model": "Mercedes-Benz Sprinter",
+        "plate": "B2C-345",
+        "tractorPlate": "GF4-UE4",
+        "maxLoad": 6000,
+        "volume": 25
       },
-      "company": {
-        "name": "Transportes Semarfe S.A.C.",
-        "ruc": "20545246949",
-        "logoUrl": "https://i.postimg.cc/RVg6k4RG/logo.png"
-      },
-      "expenses": {
-        "fuel": {
-          "amount": 250.00,
-          "description": "Se utilizaron 60 litros de Gasolina Diesel para el recorrido de 160 km. El litro está S/. 4.50. Así que el total es: 60 x 4.50 = 270"
-        },
-        "toll": {
-          "amount": 200.00,
-          "description": "Se pasaron por cinco peajes en total, los costos respectivos son: 40, 40, 40, 40, 40"
-        },
-        "viatics": {
-          "amount": 300.00,
-          "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 150 cada día al conductor para cubrir hospedaje y alimentación"
-        }
+      "cargo": {
+        "type": "Alimentos",
+        "weight": 4000,
+        "loadLocation": "Av. El Sol km 3 - Callao",
+        "loadImage": "https://example.com/cargo_image2.jpg",
+        "loadDate": "2024-04-24T05:05:46Z",
+        "unloadLocation": "Carretera Central km 200 - La Oroya",
+        "unloadDate": "2024-04-26T06:58:10Z",
+        "companyName": "Transportes Semarfe S.A.C."
       }
     },
-    {
+{
       "id": 3,
-      "name": "Viaje #MA102",
-      "load": {
-          "date": "2024-04-02T03:44:00Z",
-        "location": "Av. La Cultura 456 - San Bartolomé"
+      "name": "Viaje #MA253",
+      "driver": {
+        "fullName": "Pedro Rodriguez",
+        "DNI": "34567890",
+        "license": "D34567890",
+        "contactNumber": "987654323"
       },
-      "unload": {
-        "date": "2024-04-03T13:32:19Z",
-        "location": "Av. Ramiro Priale 123 - Chosica"
-      },
-      "driver": "Mario López",
       "vehicle": {
-        "trailerPlate": "BME-790",
-        "tractorPlate": "X0A-NBE"
+        "model": "Volkswagen Crafter",
+        "plate": "C3D-456",
+        "tractorPlate": "HG5-RT5",
+        "maxLoad": 7000,
+        "volume": 30
       },
-      "company": {
-        "name": "Mason Services S.A.C.",
-        "ruc": "20648128307",
-        "logoUrl": "https://img.freepik.com/vector-premium/plantilla-silueta-empresa-camiones_183875-933.jpg"
-      },
-      "expenses": {
-        "fuel": {
-          "amount": 315.00,
-          "description": "Se utilizaron 70 litros de Gasolina Diesel para el recorrido de 185 km. El litro está S/. 4.50. Así que el total es: 70 x 4.50 = 315"
-        },
-        "toll": {
-          "amount": 220.00,
-          "description": "Se pasaron por cinco peajes en total, los costos respectivos son: 44, 44, 44, 44, 44"
-        },
-        "viatics": {
-          "amount": 350.00,
-          "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 175 cada día al conductor para cubrir hospedaje y alimentación"
-        }
+      "cargo": {
+        "type": "Textiles",
+        "weight": 5000,
+        "loadLocation": "Av. La Marina km 5 - Callao",
+        "loadImage": "https://example.com/cargo_image3.jpg",
+        "loadDate": "2024-05-24T05:05:46Z",
+        "unloadLocation": "Carretera Central km 300 - La Oroya",
+        "unloadDate": "2024-05-26T06:58:10Z",
+        "companyName": "Transportes Semarfe S.A.C."
       }
     }
   ],
-  "inProgressTrips": [
+  "expenses": [
     {
-      "id": 4,
-      "name": "Viaje #MA102",
-      "load": {
-        "date": "2024-04-02T03:44:00Z",
-        "location": "Av. La Cultura 456 - San Bartolomé"
+      "id": 1,
+      "fuel": {
+        "amount": 297.00,
+        "description": "Se utilizaron 66 litros de Gasolina Diesel para el recorrido de 175 km. El litro está S/. 4.50. Así que el total es: 66 x 4.50 = 297"
       },
-      "unload": {
-        "location": "Av. Ramiro Priale 123 - Chosica"
+      "toll": {
+        "amount": 275.00,
+        "description": "Se pasaron por seis peajes en total, los costos respectivos son: 50, 47, 40, 40, 45, 53"
       },
-      "driver": "Mario López"
+      "viatics": {
+        "amount": 400.00 ,
+        "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 200 cada día al conductor para cubrir hospedaje y alimentación"
+      }
+    },
+    {
+      "id": 2,
+      "fuel": {
+        "amount": 540.00,
+        "description": "Se utilizaron 120 litros de gasolina diésel para el recorrido de 300 km. El precio por litro es S/. 4.50. Por lo tanto, el total es: 120 x 4.50 = 540"
+      },
+      "toll": {
+        "amount": 275.00,
+        "description": "Se pasaron por seis peajes en total, los costos respectivos son: 50, 47, 40, 40, 45, 53"
+      },
+      "viatics": {
+        "amount": 400.00,
+        "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 200 cada día al conductor para cubrir hospedaje y alimentación."
+      }
+    }
+  ],
+  "ongoingTrips": [
+    {
+      "id": 1,
+      "driver": {
+        "fullName": "Luis Ramirez",
+        "DNI": "87654321",
+        "license": "B12345678",
+        "contactNumber": "987654321"
+      },
+      "vehicle": {
+        "model": "Volkswagen Transporter",
+        "plate": "A1B-234",
+        "tractorPlate": "EF3-TD3",
+        "maxLoad": 6000,
+        "volume": 25
+      },
+      "cargoInformation": {
+        "type": "Textiles",
+        "weight": 4000,
+        "loadLocation": "Av. La Marina km 5 - Callao",
+        "loadDate": "2024-04-28",
+        "unloadLocation": "Jr. Los Pinos 123 - Huancayo",
+        "estimatedUnloadDate": "2024-04-30",
+        "companyName": "Transportes Semarfe S.A.C.",
+        "cargoImage": "https://example.com/cargo_image_2.jpg"
+      },
+      "currentLocation": {
+        "latitude": -11.979,
+        "longitude": -77.0587,
+        "speed": 70
+      }
     }
   ]
 }

@@ -22,15 +22,15 @@ export default defineComponent({
   created(){
     this.api.getTripByID(this.id).then(response => {
       this.trip = new Trip(
-          response.data.id,
-          response.data.name,
-          response.data.load.date,
-          response.data.unload.date,
-          response.data.load.location,
-          response.data.unload.location,
-          response.data.driver,
-          response.data.vehicle.trailerPlate,
-          response.data.vehicle.tractorPlate
+          response.data[0].id,
+          response.data[0].name,
+          response.data[0].load.date,
+          response.data[0].unload.date,
+          response.data[0].load.location,
+          response.data[0].unload.location,
+          response.data[0].driver,
+          response.data[0].vehicle.trailerPlate,
+          response.data[0].vehicle.tractorPlate
       );
     });
   },
