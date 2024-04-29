@@ -15,7 +15,7 @@ npm install json-server
 
 Add your new data in the file below:
 ```bash
-fixtures/db.json
+fixtures/data.json
 ```
 And activate the fake api route with the command below:
 ```bash
@@ -34,4 +34,7 @@ npm install primevue primeicons
 
 ```bash
 npm install vue-router@latest
+```
+```bash
+npm i vue-chartjs chart.js
 ```
