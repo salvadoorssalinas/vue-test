@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { Trip } from "../models/trip.entity.js";
 import {TripService} from "../services/trip.service.js";
+import {OnGoingTripService} from "../services/ongoing-trip.service.js";
 
 export default defineComponent({
   name: 'LMap',
@@ -15,48 +16,50 @@ export default defineComponent({
   },
   data() {
     return {
-      api: new TripService(),
-      trip: Trip
+      tripAPI: new TripService(),
+      onGoingTripAPI: new OnGoingTripService(),
+      trip: Trip,
+      conductor: '',
+      placa : '',
+      carga: '',
+      velocidad: 0,
+      distancia: 0,
+      latitud: 0,
+      longitud: 0
     }
   },
   created(){
-    this.api.getTripByID(this.id).then(response => {
-      this.trip = new Trip(
-          response.data[0].id,
-          response.data[0].name,
-          response.data[0].cargo.loadDate,
-          response.data[0].cargo.unloadDate,
-          response.data[0].cargo.loadLocation,
-          response.data[0].cargo.unloadLocation,
-          response.data[0].driver.fullName,
-          response.data[0].vehicle.plate,
-          response.data[0].vehicle.tractorPlate,
-          response.data[0].company.name,
-          response.data[0].company.ruc,
-          response.data[0].company.logoImage
-      );
-    });
+
   },
+  mounted() {
+    var carIcon = L.icon({
+      iconUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Car_icon_alone.png",
+      iconSize: [50, 50],
+      iconAnchor: [25, 50],
+      popupAnchor: [0, -50]
+    });
 
-  setup () {
-    let map = null
+    this.tripAPI.getTripByID(this.id).then(response => {
+      this.conductor = response.data[0].driver.fullName;
+      this.placa = response.data[0].vehicle.plate;
+      this.carga = response.data[0].cargo.weight;
+    });
+    this.onGoingTripAPI.getTripByID(this.id).then(response => {
+      console.log(response.data[0]);
+      this.velocidad = response.data[0].speed;
+      this.distancia = response.data[0].distance;
+      this.latitud = response.data[0].latitude;
+      this.longitud = response.data[0].longitude;
 
-    onMounted(() => {
-      createMapLayer()
-    })
-    onBeforeMount(() => {
-      if (map) {
-        map.remove()
-      }
-    })
-
-    const createMapLayer = () => {
-      map = L.map('mapContainer').setView([-9.190003, -75.015152], 6)
-      L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution:
-            '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+      const map = L.map('mapContainer').setView([this.latitud, this.longitud], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
       }).addTo(map);
-    }
+      L.marker([this.latitud, this.longitud], {icon: carIcon}).addTo(map)
+          .bindPopup('Ubicación actual')
+          .openPopup();
+    });
+
   }
 })
 </script>
@@ -67,13 +70,13 @@ export default defineComponent({
     <template #content>
       <div class="content-info-preview">
         <h1>Información del Viaje</h1>
-        <p><strong>Conductor:</strong> {{ trip.conductor }}</p>
-        <p><strong>Trailer:</strong> {{ trip.placaCarreta }}</p>
-        <p><strong>Tractor:</strong> {{ trip.placaTracto }}</p>
-        <p><strong>Peso:</strong> <!-- Espacio para el peso --></p>
-        <p><strong>Volumen:</strong> <!-- Espacio para el volumen --></p>
-        <p><strong>Distancia:</strong> <!-- Espacio para la distancia --></p>
-        <p><strong>Tiempo estimado:</strong> <!-- Espacio para el tiempo estimado --></p>
+        <p><strong>Conductor:</strong> {{ conductor }}</p>
+        <p><strong>Placa:</strong> {{ placa }}</p>
+        <p><strong>Peso:</strong> {{ carga }} kg</p>
+        <p><strong>Velocidad:</strong> {{ velocidad }} km/h</p>
+        <p><strong>Distancia:</strong> {{ distancia }} km</p>
+        <p><strong>Latitud:</strong> {{ latitud }}</p>
+        <p><strong>Longitud:</strong> {{ longitud }}</p>
       </div>
     </template>
   </pv-card>

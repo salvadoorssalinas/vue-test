@@ -129,34 +129,17 @@
   "ongoingTrips": [
     {
       "id": 1,
-      "driver": {
-        "fullName": "Luis Ramirez",
-        "DNI": "87654321",
-        "license": "B12345678",
-        "contactNumber": "987654321"
-      },
-      "vehicle": {
-        "model": "Volkswagen Transporter",
-        "plate": "A1B-234",
-        "tractorPlate": "EF3-TD3",
-        "maxLoad": 6000,
-        "volume": 25
-      },
-      "cargoInformation": {
-        "type": "Textiles",
-        "weight": 4000,
-        "loadLocation": "Av. La Marina km 5 - Callao",
-        "loadDate": "2024-04-28",
-        "unloadLocation": "Jr. Los Pinos 123 - Huancayo",
-        "estimatedUnloadDate": "2024-04-30",
-        "companyName": "Transportes Semarfe S.A.C.",
-        "cargoImage": "https://example.com/cargo_image_2.jpg"
-      },
-      "currentLocation": {
-        "latitude": -11.979,
-        "longitude": -77.0587,
-        "speed": 70
-      }
+      "latitude": -12.096808507450856,
+      "longitude": -76.99985340288825,
+      "speed": 60,
+      "distance": 100
+    },
+    {
+      "id": 3,
+      "latitude": -11.979,
+      "longitude": -77.0587,
+      "speed": 70,
+      "distance": 200
     }
   ]
 }
