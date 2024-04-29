@@ -1,6 +1,6 @@
 <script>
 import { Expense } from "../model/expense.entity.js";
-import { Trip } from "../../history/model/trip.entity.js";
+import { Trip } from "../../trip/model/trip.entity.js";
 import {useRouter} from "vue-router";
 export default {
   name: "expense-card",
@@ -29,61 +29,52 @@ export default {
 </script>
 
 <template>
-  <pv-card>
-    <template #title>
-      <h2>Viaje {{ trip.id }}</h2>
-    </template>
-    <template #content>
-      <div class="container">
-        <div class="carga">
+    <pv-card class="expense-card">
+      <template #content>
+        <div class="title">
+          <h2>{{trip.nombre}}</h2>
+        </div>
+        <div class="content-info-preview">
           <p>FECHA DE CARGA: {{ formatDate(trip.fechaCarga) }}</p>
           <p>LUGAR DE CARGA: {{ trip.lugarCarga }}</p>
         </div>
-        <div class="descarga">
-          <p>FECHA DE DESCARGA: {{ formatDate(trip.fechaDescarga) }}</p>
-          <p>LUGAR DE DESCARGA: {{ trip.lugarDescarga }}</p>
-        </div>
-      </div>
-    </template>
-    <template #footer>
-      <pv-button class="pv-button" @click="goToExpenses(trip.id)">Ver gastos</pv-button>
-    </template>
-  </pv-card>
+      </template>
+    </pv-card>
+    <pv-button label="Ver gastos" class="btn" @click="goToExpenses(trip.id)"></pv-button>
 </template>
 
 <style scoped>
-  .p-card{
-    background-color: #FFA500;
-  }
-  .container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+h2{
+  font-family: Roboto, sans-serif;
+  color: black;
+}
+p{
+  font-family: Roboto, sans-serif;
+  color: black;
+}
 
-  h2{
-    font-size: 36px;
-    color: black;
-  }
-  p{
-    font-size: 24px;
-    font-weight: lighter;
-    color: black;
-  }
+.expense-card {
+  background-color: #FFA500;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-  .pv-button {
-    background-color: green;
-    border-radius: 15px;
-    width: 20%;
-    font-size: 24px;
-    font-family: Rubik, sans-serif;
-    font-weight: 500;
-    display: block;
-    margin: auto;
-  }
+.content-info-preview {
+  position: absolute;
+  margin: -94px 15px 0 170px;
+}
 
-  @media screen and (max-width: 1000px){
-    .container{
-      grid-template-columns: 1fr;
-    }
-  }
+.btn {
+  font-family: Rubik, sans-serif;
+  background-color: #006400;
+  border-radius: 15px;
+  width: 25%;
+  max-width: 320px;
+  margin-left: calc(50% - 160px);
+  margin-top: -20px;
+}
+
 </style>

@@ -40,24 +40,21 @@ export default {
   <div class="main-top">
     <h1>Ver viajes en progreso</h1>
   </div>
-  <div class="main-body">
+  <div class="list">
     <travel-card v-for="trip in filteredTrips" :trip="trip"/>
   </div>
 
 </template>
 
 <style scoped>
-.main-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px;
+h1{
+  text-align: center;
+  font-size: 48px;
 }
 
-.search-bar input {
-  width: 650px;  /* adjust as needed */
-  height: 45px;
-}
-@media (min-width: 1550px) {
+.list{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 </style>

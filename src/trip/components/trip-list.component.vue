@@ -4,7 +4,7 @@ import { Trip } from '../model/trip.entity.js';
 import TripCard from "./trip-card.component.vue";
 
 export default {
-  name: "history-list",
+  name: "trip-list",
   components: {
     TripCard
   },
@@ -113,13 +113,21 @@ export default {
 </template>
 
 <style scoped>
-.main-top {
+.main-top{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
   margin: 20px;
 }
 
+h1{
+  font-size: 48px;
+  font-family: Roboto, sans-serif;
+}
+
+.p-button{
+  height: 50px;
+  margin: auto 0;
+}
 .container-search-bar {
   display: flex;
   text-align: center;
@@ -127,8 +135,13 @@ export default {
 }
 
 .search-bar input {
-  width: 650px;  /* adjust as needed */
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  width: 650px;
   height: 45px;
+  padding: 10px;
+  border: black 1px solid;
+  border-radius: 5px;
 }
 
 .buttons-group {
@@ -136,8 +149,6 @@ export default {
   justify-content: space-between;
   margin-left: 20px;
 }
-
-
 
 @media (min-width: 1550px) {
   .container-search-bar {

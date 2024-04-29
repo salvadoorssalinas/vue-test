@@ -9,6 +9,6 @@ export class TravelService {
         return http.get("trips");
     }
     getTravelByID(id) {
-        return http.get(`trips/${id}`);
+        return http.get(`trips/?id=${id}`);
     }
 }

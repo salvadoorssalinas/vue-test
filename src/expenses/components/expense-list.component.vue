@@ -1,6 +1,6 @@
 <script>
 import ExpenseCard from "./expense-card.component.vue";
-import { Trip } from "../../history/model/trip.entity.js"
+import { Trip } from "../../trip/model/trip.entity.js"
 import { ExpenseService } from "../services/expense.service.js";
 export default {
   name: "expense-list.component",
@@ -48,17 +48,15 @@ export default {
 
 <style scoped>
   h2{
-    font-size: 36px;
+    font-size: 48px;
     text-align: center;
   }
 
   .list{
     display: grid;
     grid-template-columns: 1fr;
-    width: 90%;
-    margin: 0 auto;
-    gap: 20px;
-  }
+    gap: 40px;
 
+  }
 
 </style>

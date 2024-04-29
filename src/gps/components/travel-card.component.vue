@@ -20,35 +20,41 @@ export default {
       goToGPS
     };
   },
+  methods: {
+    formatDate(dateString) {
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      return new Date(dateString).toLocaleDateString(undefined, options);
+    }
+  }
 }
 
 </script>
 
 <template>
-  <main>
+  <div class="travel">
     <pv-card class="travel-card">
       <template #content>
         <div class="title">
           <h2>{{trip.nombre}}</h2>
         </div>
         <div class="content-info-preview">
-          <p>FECHA DE CARGA: {{ trip.fechaCarga }}</p>
+          <p>FECHA DE CARGA: {{ formatDate(trip.fechaCarga) }}</p>
           <p>LUGAR DE CARGA: {{ trip.lugarCarga }}</p>
         </div>
       </template>
     </pv-card>
-    <pv-button class="btn" @click="goToGPS(trip.id)">Ver GPS</pv-button>
-  </main>
+    <pv-button label="Ver GPS" class="btn" @click="goToGPS(trip.id)"></pv-button>
+  </div>
 </template>
 
 <style scoped>
-
-main {
-  margin: 40px 0px 4px auto;
-  font-family: "Roboto", sans-serif;
-  width: 75%;
-  display: flex;
-  flex-direction: column;
+h2{
+  font-family: Roboto, sans-serif;
+  color: black;
+}
+p{
+  font-family: Roboto, sans-serif;
+  color: black;
 }
 
 .travel-card {
@@ -57,6 +63,7 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   height: 100%;
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .content-info-preview {
@@ -65,41 +72,13 @@ main {
 }
 
 .btn {
+  font-family: Rubik, sans-serif;
   background-color: #006400;
   border-radius: 15px;
   width: 25%;
   max-width: 320px;
-  margin-left: 250px;
-  margin-top: -25px;
-}
-@media (max-width: 1050px) {
-  main {
-    margin: 40px 2px 4px 110px;
-    width: 100%;
-  }
-}
-
-@media (max-width: 750px) {
-  main {
-    margin: 40px 2px 4px 0;
-    width: 100%;
-  }
-  .content-info-preview {
-    margin: -94px 15px 0 210px;
-  }
-  .btn {
-    margin-left: 250px;
-    margin-top: -5px;
-  }
-}
-
-@media (max-width: 450px) {
-  .title {
-    margin-bottom: 30px;
-  }
-  .content-info-preview {
-    margin: -120px 15px 0 170px;
-  }
+  margin-left: calc(50% - 160px);
+  margin-top: -20px;
 }
 
 

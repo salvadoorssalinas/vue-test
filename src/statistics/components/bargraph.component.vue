@@ -9,7 +9,7 @@ export default {
   components: {DestinyStatistic, monthStatistic,destinyStatistic },
   data() {
     return {
-      showMonthStatistics: true, // Mostrar estadísticas por mes por defecto
+      showMonthStatistics: true,
       showDestinationStatistics: false,
     };
   },
@@ -37,18 +37,13 @@ export default {
 
   <div class="main-bar">
     <div>
-      <button
-          @click="toggleMonthStatistics"
-          :style="{ backgroundColor: showMonthStatistics ? '#9AABDE' : 'white' }"
-      >
+      <pv-button @click="toggleMonthStatistics" :style="{ backgroundColor: showMonthStatistics ? '#9AABDE' : 'white' }">
         Mostrar estadísticas por mes
-      </button>
-      <button
-          @click="toggleDestinationStatistics"
-          :style="{ backgroundColor: showDestinationStatistics ? '#9AABDE' : 'white' }"
-      >
+      </pv-button>
+
+      <pv-button @click="toggleDestinationStatistics" :style="{ backgroundColor: showDestinationStatistics ? '#9AABDE' : 'white' }">
         Mostrar estadísticas por destino
-      </button>
+      </pv-button>
     </div>
 
     <div class="statistic-per-month" v-show="showMonthStatistics">

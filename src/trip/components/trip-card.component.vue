@@ -18,33 +18,46 @@ export default {
     return{
       goToTrip
     };
+  },
+  methods: {
+    formatDate(dateString) {
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      return new Date(dateString).toLocaleDateString(undefined, options);
+    }
   }
 }
 
 </script>
 
 <template>
-  <main>
+  <div class="trip">
     <pv-card class="trip-card">
       <template #content>
         <div class="title">
           <h2>{{trip.nombre}}</h2>
         </div>
         <div class="content-info-preview">
-          <p>FECHA DE CARGA: {{ trip.fechaCarga }}</p>
+          <p>FECHA DE CARGA: {{ formatDate(trip.fechaCarga) }}</p>
           <p>LUGAR DE CARGA: {{ trip.lugarCarga }}</p>
         </div>
       </template>
     </pv-card>
     <pv-button label="Ver más" class="btn" @click="goToTrip(trip.id)"></pv-button>
-  </main>
+  </div>
 </template>
 
 <style scoped>
+h2{
+  font-family: Roboto, sans-serif;
+  color: black;
+}
+p{
+  font-family: Roboto, sans-serif;
+  color: black;
+}
 
-main {
-  margin: 40px 0px 4px auto;
-  font-family: "Roboto", sans-serif;
+.trip {
+  margin: 40px 0 4px auto;
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -64,6 +77,7 @@ main {
 }
 
 .btn {
+  font-family: Rubik, sans-serif;
   background-color: #006400;
   border-radius: 15px;
   width: 25%;
@@ -71,15 +85,16 @@ main {
   margin-left: 250px;
   margin-top: -25px;
 }
+
 @media (max-width: 1050px) {
-  main {
+  .trip {
     margin: 40px 2px 4px 110px;
     width: 100%;
   }
 }
 
 @media (max-width: 750px) {
-  main {
+  .trip {
     margin: 40px 2px 4px 0;
     width: 100%;
   }
