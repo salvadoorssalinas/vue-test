@@ -1,12 +1,12 @@
 <script>
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
-import { StadisticService } from "../services/stadistic.service.js";
+import { StatisticService } from "../services/statistic.service.js";
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
 export default {
-  name: 'Statistics Per Month',
+  name: "month-statistic",
   components: { Bar },
   props:{
     chartId: {
@@ -43,7 +43,7 @@ export default {
     };
   },
   async mounted() {
-    const statisticService = new StadisticService();
+    const statisticService = new StatisticService();
     const response = await statisticService.getTrips();
     if (response.data) {
       const trips = response.data;

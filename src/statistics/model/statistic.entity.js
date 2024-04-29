@@ -1,4 +1,4 @@
-export class StadisticEntity {
+export class Statistic {
     constructor(id, name, loadDate, loadLocation, unloadDate, unloadLocation) {
         this.id = id;
         this.name = name;

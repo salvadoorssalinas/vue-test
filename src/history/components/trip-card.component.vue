@@ -1,17 +1,23 @@
 <script>
 import {Trip} from "../model/trip.entity.js";
-import Toolbar from "primevue/toolbar";
+import {useRouter} from "vue-router";
 
 export default {
-  name: "tripcard.component",
-  components: {
-    Toolbar
-  },
+  name: "trip-card",
   props: {
     trip: {
       type: Trip,
       required: true
     }
+  },
+  setup(){
+    const router = useRouter();
+    const goToTrip = (id) => {
+      router.push(`/historial/${id}`);
+    }
+    return{
+      goToTrip
+    };
   }
 }
 
@@ -30,9 +36,7 @@ export default {
         </div>
       </template>
     </pv-card>
-    <router-link :to="{ name: 'DetailTrip', params: { id: trip.id } }">
-      <pv-button label="Ver más" class="btn"></pv-button>
-    </router-link>
+    <pv-button label="Ver más" class="btn" @click="goToTrip(trip.id)"></pv-button>
   </main>
 </template>
 

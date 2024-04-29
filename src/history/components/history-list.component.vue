@@ -1,12 +1,12 @@
 <script>
 import { TripService } from '../services/trip.service.js';
 import { Trip } from '../model/trip.entity.js';
-import Tripcard from "./trip-card.component.vue";
+import TripCard from "./trip-card.component.vue";
 
 export default {
-  name: "historylist.component",
+  name: "history-list",
   components: {
-    Tripcard
+    TripCard
   },
   data() {
     return {
@@ -107,7 +107,7 @@ export default {
 
 
   <div class="main-body">
-    <Tripcard v-for="trip in filteredTrips" :trip="trip"/>
+    <trip-card v-for="trip in filteredTrips" :trip="trip"/>
   </div>
 
 </template>

@@ -1,15 +1,15 @@
 <script>
-import {Travel} from "../model/travel.entity.js"
+import {Trip} from "../model/trip.entity.js"
 import Toolbar from "primevue/toolbar";
 
 export default {
-  name: "travelcard.component",
+  name: "travel-card",
   components: {
     Toolbar
   },
   props: {
-    travel: {
-      type: Travel,
+    trip: {
+      type: Trip,
       required: true
     }
   }
@@ -22,15 +22,15 @@ export default {
     <pv-card class="travel-card">
       <template #content>
         <div class="title">
-          <h2>{{travel.nombre}}</h2>
+          <h2>{{trip.nombre}}</h2>
         </div>
         <div class="content-info-preview">
-          <p>FECHA DE CARGA: {{ travel.fechaCarga }}</p>
-          <p>LUGAR DE CARGA: {{ travel.lugarCarga }}</p>
+          <p>FECHA DE CARGA: {{ trip.fechaCarga }}</p>
+          <p>LUGAR DE CARGA: {{ trip.lugarCarga }}</p>
         </div>
       </template>
     </pv-card>
-    <router-link :to="{ name: 'GpsTravel', params: { id: travel.id } }">
+    <router-link :to="{ name: 'GpsTravel', params: { id: trip.id } }">
       <pv-button label="Ver GPS" class="btn"></pv-button>
     </router-link>
   </main>

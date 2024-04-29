@@ -9,8 +9,8 @@ export default {
       return this.$route.params.id;
     }
   },
-  data(){
-    return{
+  data() {
+    return {
       expense: Expense,
       expenseService: new ExpenseService(),
       totalExpenses: 0

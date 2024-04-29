@@ -1,4 +1,4 @@
-export class Travel {
+export class Trip {
     constructor(id, nombre, fechaCarga, fechaDescarga, lugarCarga, lugarDescarga, conductor, placaCarreta, placaTracto) {
         this.id = id;
         this.nombre = nombre;

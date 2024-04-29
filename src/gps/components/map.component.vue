@@ -3,7 +3,7 @@
 import { defineComponent, onMounted, onBeforeMount } from 'vue'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
-import {Travel} from "../model/travel.entity.js";
+import {Trip} from "../model/trip.entity.js";
 import {TravelService} from "../services/travel.service.js";
 
 export default defineComponent({
@@ -17,12 +17,12 @@ export default defineComponent({
   data() {
     return {
       api: new TravelService(),
-      travel: Travel
+      trip: Trip
     }
   },
   created(){
     this.api.getTravelByID(this.id).then(response => {
-      this.travel = new Travel(
+      this.trip = new Trip(
           response.data.id,
           response.data.name,
           response.data.load.date,
@@ -67,9 +67,9 @@ export default defineComponent({
     <template #content>
       <div class="content-info-preview">
         <h1>Información del Viaje</h1>
-        <p><strong>Conductor:</strong> {{ travel.driver }}</p>
-        <p><strong>Trailer:</strong> {{ travel.trailerPlate }}</p>
-        <p><strong>Tractor:</strong> {{ travel.tractorPlate }}</p>
+        <p><strong>Conductor:</strong> {{ trip.conductor }}</p>
+        <p><strong>Trailer:</strong> {{ trip.placaCarreta }}</p>
+        <p><strong>Tractor:</strong> {{ trip.placaTracto }}</p>
         <p><strong>Peso:</strong> <!-- Espacio para el peso --></p>
         <p><strong>Volumen:</strong> <!-- Espacio para el volumen --></p>
         <p><strong>Distancia:</strong> <!-- Espacio para la distancia --></p>

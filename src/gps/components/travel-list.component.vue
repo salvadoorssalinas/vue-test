@@ -1,5 +1,5 @@
 <script>
-import {Travel} from "../model/travel.entity.js";
+import {Trip} from "../model/trip.entity.js";
 import {TravelService} from "../services/travel.service.js";
 import TravelCard from "./travel-card.component.vue";
 
@@ -11,25 +11,25 @@ export default {
   data() {
     return {
       api: new TravelService(),
-      travels: [],
-      travel: Travel,
-      filteredTravels: [],
+      trips: [],
+      trip: Trip,
+      filteredTrips: [],
     }
   },
   created() {
     this.api.getTravels().then(response => {
-      this.travels = response.data.map(travel => new Travel(
-          travel.id,
-          travel.name,
-          travel.load.date,
-          travel.unload.date,
-          travel.load.location,
-          travel.unload.location,
-          travel.driver,
-          travel.vehicle.trailerPlate,
-          travel.vehicle.tractorPlate,
+      this.trips = response.data.map(trip => new Trip(
+          trip.id,
+          trip.name,
+          trip.load.date,
+          trip.unload.date,
+          trip.load.location,
+          trip.unload.location,
+          trip.driver,
+          trip.vehicle.trailerPlate,
+          trip.vehicle.tractorPlate,
       ));
-      this.filteredTravels = this.travels;
+      this.filteredTrips = this.trips;
     });
   }
 }
@@ -41,7 +41,7 @@ export default {
     <h1>Ver viajes en progreso</h1>
   </div>
   <div class="main-body">
-    <TravelCard v-for="travel in filteredTravels" :travel="travel"/>
+    <travel-card v-for="trip in filteredTrips" :trip="trip"/>
   </div>
 
 </template>
