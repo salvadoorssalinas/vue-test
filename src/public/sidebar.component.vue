@@ -3,9 +3,11 @@ import { ref, watch} from "vue";
 
 const props = defineProps({
   visible: Boolean,
+  isClient: Boolean
 });
 
 const localVisible = ref(props.visible);
+const isClient = false;
 
 watch(() => props.visible, (newValue) => {
   localVisible.value = newValue;
@@ -21,10 +23,14 @@ watch(() => props.visible, (newValue) => {
       <i class="pi pi-times" style="font-size: 2rem; color: #686f75" />
     </template>
     <ul>
-      <li><router-link to="/historial">Historial</router-link></li>
-      <li><router-link to="/gastos">Gastos</router-link></li>
-      <li><router-link to="/gps">GPS</router-link></li>
-      <li><router-link to="/estadisticas">Estadísticas</router-link></li>
+
+      <li v-if="isClient"><router-link to="/cliente/historial">Historial</router-link></li>
+      <li v-if="isClient"><router-link to="/cliente/gastos">Gastos</router-link></li>
+      <li v-if="isClient"><router-link to="/cliente/gps">GPS</router-link></li>
+      <li v-if="isClient"><router-link to="/cliente/estadisticas">Estadísticas</router-link></li>
+      <li v-if="!isClient"><router-link to="/empresario/registro">Registro</router-link></li>
+      <li v-if="!isClient"><router-link to="/empresario/historial">Historial</router-link></li>
+      <li v-if="!isClient"><router-link to="/empresario/gps">GPS</router-link></li>
     </ul>
     <div class = "button-container">
       <pv-button style="background-color: #1E3A8A; font-size: 24px; border-radius: 5px;">
