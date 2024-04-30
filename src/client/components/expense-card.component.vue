@@ -13,7 +13,7 @@ export default {
   setup(){
     const router = useRouter();
     const goToExpenses = (id) => {
-      router.push(`/gastos/${id}`);
+      router.push(`/cliente/gastos/${id}`);
     }
     return{
       goToExpenses

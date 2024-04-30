@@ -13,7 +13,7 @@ export default {
   setup(){
     const router = useRouter();
     const goToTrip = (id) => {
-      router.push(`/historial/${id}`);
+      router.push(`/cliente/historial/${id}`);
     }
     return{
       goToTrip

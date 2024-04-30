@@ -12,6 +12,7 @@ import Button from 'primevue/button';
 import Sidebar from "primevue/sidebar";
 import Card from "primevue/card";
 import Dropdown from 'primevue/dropdown';
+import InputText from 'primevue/inputtext'
 
 //Router
 import router from './router/index.js'
@@ -23,5 +24,6 @@ app.component('pv-button', Button)
 app.component('pv-sidebar', Sidebar)
 app.component('pv-card', Card)
 app.component('pv-dropdown', Dropdown)
+app.component('pv-inputtext', InputText)
 app.use(router);
 app.mount('#app')

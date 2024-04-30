@@ -13,7 +13,7 @@ export default {
   setup(){
     const router = useRouter();
     const goToGPS = (id) => {
-      router.push(`/GPS/${id}`);
+      router.push(`/cliente/GPS/${id}`);
     }
     return{
       goToGPS

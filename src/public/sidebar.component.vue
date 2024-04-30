@@ -7,7 +7,7 @@ const props = defineProps({
 });
 
 const localVisible = ref(props.visible);
-const isClient = false;
+const isClient = true;
 
 watch(() => props.visible, (newValue) => {
   localVisible.value = newValue;
