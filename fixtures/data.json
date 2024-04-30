@@ -20,7 +20,7 @@
         "type": "Electronica",
         "weight": 3000,
         "loadLocation": "Av. La Playa km 2 - Ventanilla",
-        "loadImage": "https://example.com/cargo_image.jpg",
+        "loadImage": "https://logisticaytransportedecarga.pe/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-18-at-7.38.54-AM-5-769x1024.jpeg",
         "loadDate": "2024-03-24T05:05:46Z",
         "unloadLocation": "Carretera Central km 141 - Morococha",
         "unloadDate": "2024-03-26T06:58:10Z"
@@ -51,7 +51,7 @@
         "type": "Alimentos",
         "weight": 4000,
         "loadLocation": "Av. El Sol km 3 - Callao",
-        "loadImage": "https://example.com/cargo_image2.jpg",
+        "loadImage": "https://logisticaytransportedecarga.pe/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-18-at-7.38.54-AM-5-769x1024.jpeg",
         "loadDate": "2024-04-24T05:05:46Z",
         "unloadLocation": "Carretera Central km 200 - La Oroya",
         "unloadDate": "2024-04-26T06:58:10Z"
@@ -82,7 +82,7 @@
         "type": "Textiles",
         "weight": 5000,
         "loadLocation": "Av. La Marina km 5 - Callao",
-        "loadImage": "https://example.com/cargo_image3.jpg",
+        "loadImage": "https://logisticaytransportedecarga.pe/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-18-at-7.38.54-AM-5-769x1024.jpeg",
         "loadDate": "2024-05-24T05:05:46Z",
         "unloadLocation": "Carretera Central km 300 - La Oroya",
         "unloadDate": "2024-05-26T06:58:10Z"

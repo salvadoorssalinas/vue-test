@@ -22,14 +22,14 @@ export default {
           response.data[0].name,
           response.data[0].cargo.loadDate,
           response.data[0].cargo.unloadDate,
-          response.data[0].cargo.loaLocation,
+          response.data[0].cargo.loadLocation,
           response.data[0].cargo.unloadLocation,
           response.data[0].driver.fullName,
           response.data[0].vehicle.plate,
           response.data[0].vehicle.tractorPlate,
           response.data[0].company.name,
           response.data[0].company.ruc,
-          response.data[0].company.logoImage
+          response.data[0].cargo.loadImage
       );
     });
   }
@@ -38,35 +38,65 @@ export default {
 
 <template>
   <div class="container-general">
-    <img :src="trip.imagenEmpresa" width="250" >
+    <div class="evidence">
+      <h2>Evidence</h2>
+      <img :src="trip.evidencia" width="400">
+    </div>
     <div class="container-info-general">
       <h1>{{ trip.nombre }}</h1>
       <div class="container-info">
-        <p>FECHA DE CARGA: {{ trip.fechaCarga }}</p>
+        <p>
+          <strong>LOAD DATE:</strong>
+          {{ trip.fechaCarga }}
+        </p>
       </div>
       <div class="container-info">
-        <p>FECHA DE DESCARGA: {{ trip.fechaDescarga }}</p>
+        <p>
+          <strong>UNLOAD DATE:</strong>
+          {{ trip.fechaDescarga }}
+        </p>
       </div>
       <div class="container-info">
-        <p>LUGAR DE CARGA: {{ trip.lugarCarga }}</p>
+        <p>
+          <strong>LOAD LOCATION:</strong>
+          {{ trip.lugarCarga }}
+        </p>
       </div>
       <div class="container-info">
-        <p>LUGAR DE DESCARGA: {{ trip.lugarDescarga }}</p>
+        <p>
+          <strong>UNLOAD LOCATION:</strong>
+          {{ trip.lugarDescarga }}
+        </p>
       </div>
       <div class="container-info">
-        <p>CONDUCTOR: {{ trip.conductor }}</p>
+        <p>
+          <strong>DRIVER:</strong>
+           {{ trip.conductor }}
+        </p>
       </div>
       <div class="container-info">
-        <p>PLACA DE CARRETA:{{ trip.placaCarreta }}</p>
+        <p>
+          <strong>PLATE:</strong>
+          {{ trip.placaCarreta }}
+        </p>
       </div>
       <div class="container-info">
-        <p>PLACA DE TRACTO: {{ trip.placaTracto }}</p>
+        <p>
+          <strong>TRACTOR PLATE: </strong>
+          {{ trip.placaTracto }}
+        </p>
       </div>
       <div class="container-info">
-        <p>EMPRESA: {{ trip.empresa }}</p>
+        <p>
+          <strong>COMPANY:</strong>
+           {{ trip.empresa }}
+        </p>
       </div>
       <div class="container-info">
-        <p>RUC: {{ trip.ruc }}</p>
+        <p>
+          <strong>RUC: </strong>
+          {{ trip.ruc }}
+        </p>
       </div>
     </div>
   </div>

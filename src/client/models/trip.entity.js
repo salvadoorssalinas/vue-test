@@ -1,5 +1,5 @@
 export class Trip {
-    constructor(id, nombre, fechaCarga, fechaDescarga, lugarCarga, lugarDescarga, conductor, placaCarreta, placaTracto, empresa, ruc, imagenEmpresa) {
+    constructor(id, nombre, fechaCarga, fechaDescarga, lugarCarga, lugarDescarga, conductor, placaCarreta, placaTracto, empresa, ruc, evidencia) {
         this.id = id;
         this.nombre = nombre;
         this.fechaCarga = fechaCarga;
@@ -11,7 +11,7 @@ export class Trip {
         this.placaTracto = placaTracto;
         this.empresa = empresa;
         this.ruc = ruc;
-        this.imagenEmpresa = imagenEmpresa;
+        this.evidencia = evidencia;
     }
 
 }
