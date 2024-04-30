@@ -19,13 +19,13 @@ export default defineComponent({
       tripAPI: new TripService(),
       onGoingTripAPI: new OnGoingTripService(),
       trip: Trip,
-      conductor: '',
-      placa : '',
-      carga: '',
-      velocidad: 0,
-      distancia: 0,
-      latitud: 0,
-      longitud: 0
+      driver: '',
+      plate : '',
+      load: '',
+      speed: 0,
+      distance: 0,
+      latitude: 0,
+      longitude: 0
     }
   },
   setup(){
@@ -47,23 +47,23 @@ export default defineComponent({
     });
 
     this.tripAPI.getTripByID(this.id).then(response => {
-      this.conductor = response.data[0].driver.fullName;
-      this.placa = response.data[0].vehicle.plate;
-      this.carga = response.data[0].cargo.weight;
+      this.driver = response.data[0].driver.fullName;
+      this.plate = response.data[0].vehicle.plate;
+      this.load = response.data[0].cargo.weight;
     });
     this.onGoingTripAPI.getTripByID(this.id).then(response => {
       console.log(response.data[0]);
-      this.velocidad = response.data[0].speed;
-      this.distancia = response.data[0].distance;
-      this.latitud = response.data[0].latitude;
-      this.longitud = response.data[0].longitude;
+      this.speed = response.data[0].speed;
+      this.distance = response.data[0].distance;
+      this.latitude = response.data[0].latitude;
+      this.longitude = response.data[0].longitude;
 
-      const map = L.map('mapContainer').setView([this.latitud, this.longitud], 13);
+      const map = L.map('mapContainer').setView([this.latitude, this.longitude], 13);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
-      L.marker([this.latitud, this.longitud], {icon: carIcon}).addTo(map)
-          .bindPopup('Ubicación actual')
+      L.marker([this.latitude, this.longitude], {icon: carIcon}).addTo(map)
+          .bindPopup('Current location')
           .openPopup();
     });
 
@@ -76,18 +76,18 @@ export default defineComponent({
       <pv-card>
         <template #content>
           <div class="content">
-            <h1>Información del viaje</h1>
-            <p><strong>Conductor:</strong> {{ conductor }}</p>
-            <p><strong>Placa:</strong> {{ placa }}</p>
-            <p><strong>Peso:</strong> {{ carga }} kg</p>
-            <p><strong>Velocidad:</strong> {{ velocidad }} km/h</p>
-            <p><strong>Distancia:</strong> {{ distancia }} km</p>
-            <p><strong>Latitud:</strong> {{ latitud }}</p>
-            <p><strong>Longitud:</strong> {{ longitud }}</p>
+            <h1>Trip Information</h1>
+            <p><strong>Driver:</strong> {{ driver }}</p>
+            <p><strong>Plate:</strong> {{ plate }}</p>
+            <p><strong>Load:</strong> {{ load }} kg</p>
+            <p><strong>Speed:</strong> {{ speed }} km/h</p>
+            <p><strong>Distance:</strong> {{ distance }} km</p>
+            <p><strong>Latitude:</strong> {{ latitude }}</p>
+            <p><strong>Longitude:</strong> {{ longitude }}</p>
           </div>
         </template>
       </pv-card>
-      <pv-button label="Alertas" class="btn" @click="goToAlerts(id)"></pv-button>
+      <pv-button label="Alerts" class="btn" @click="goToAlerts(id)"></pv-button>
     </div>
     <div id="mapContainer"></div>
   </div>

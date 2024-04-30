@@ -20,7 +20,7 @@ export default {
         labels: [],
         datasets: [
           {
-            label: 'Cantidad de Viajes',
+            label: 'Number of trips',
             backgroundColor: '#002E43',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1,
@@ -33,7 +33,7 @@ export default {
         plugins: {
           title: {
             display: true,
-            text: 'Visualización de envíos por destino',
+            text: 'Visualization per destination',
             font: {
               size: 20
             }

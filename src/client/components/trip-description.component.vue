@@ -40,56 +40,56 @@ export default {
   <div class="container-general">
     <div class="evidence">
       <h2>Evidence</h2>
-      <img :src="trip.evidencia" width="400">
+      <img :src="trip.evidence" width="400">
     </div>
     <div class="container-info-general">
-      <h1>{{ trip.nombre }}</h1>
+      <h1>{{ trip.name }}</h1>
       <div class="container-info">
         <p>
           <strong>LOAD DATE:</strong>
-          {{ trip.fechaCarga }}
+          {{ trip.loadDate }}
         </p>
       </div>
       <div class="container-info">
         <p>
           <strong>UNLOAD DATE:</strong>
-          {{ trip.fechaDescarga }}
+          {{ trip.unloadDate }}
         </p>
       </div>
       <div class="container-info">
         <p>
           <strong>LOAD LOCATION:</strong>
-          {{ trip.lugarCarga }}
+          {{ trip.loadLocation }}
         </p>
       </div>
       <div class="container-info">
         <p>
           <strong>UNLOAD LOCATION:</strong>
-          {{ trip.lugarDescarga }}
+          {{ trip.unloadLocation }}
         </p>
       </div>
       <div class="container-info">
         <p>
           <strong>DRIVER:</strong>
-           {{ trip.conductor }}
+           {{ trip.driver }}
         </p>
       </div>
       <div class="container-info">
         <p>
           <strong>PLATE:</strong>
-          {{ trip.placaCarreta }}
+          {{ trip.trailerPlate }}
         </p>
       </div>
       <div class="container-info">
         <p>
           <strong>TRACTOR PLATE: </strong>
-          {{ trip.placaTracto }}
+          {{ trip.tractorPlate }}
         </p>
       </div>
       <div class="container-info">
         <p>
           <strong>COMPANY:</strong>
-           {{ trip.empresa }}
+           {{ trip.company }}
         </p>
       </div>
       <div class="container-info">

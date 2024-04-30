@@ -24,17 +24,17 @@ watch(() => props.visible, (newValue) => {
     </template>
     <ul>
 
-      <li v-if="isClient"><router-link to="/cliente/historial">Historial</router-link></li>
-      <li v-if="isClient"><router-link to="/cliente/gastos">Gastos</router-link></li>
+      <li v-if="isClient"><router-link to="/cliente/historial">Record</router-link></li>
+      <li v-if="isClient"><router-link to="/cliente/gastos">Expenses</router-link></li>
       <li v-if="isClient"><router-link to="/cliente/gps">GPS</router-link></li>
-      <li v-if="isClient"><router-link to="/cliente/estadisticas">Estadísticas</router-link></li>
-      <li v-if="!isClient"><router-link to="/empresario/registro">Registro</router-link></li>
-      <li v-if="!isClient"><router-link to="/empresario/historial">Historial</router-link></li>
+      <li v-if="isClient"><router-link to="/cliente/estadisticas">Statistics</router-link></li>
+      <li v-if="!isClient"><router-link to="/empresario/registro">Registry</router-link></li>
+      <li v-if="!isClient"><router-link to="/empresario/historial">Record</router-link></li>
       <li v-if="!isClient"><router-link to="/empresario/gps">GPS</router-link></li>
     </ul>
     <div class = "button-container">
       <pv-button style="background-color: #1E3A8A; font-size: 24px; border-radius: 5px;">
-        Cerrar Sesión</pv-button>
+        Log Out</pv-button>
     </div>
 
 

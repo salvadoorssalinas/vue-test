@@ -22,7 +22,7 @@ const router = createRouter({
         { path: '/cliente/historial', component: TripList },
         { path: '/cliente/historial/:id', component: TripDescription },
         { path: '/cliente/gastos', component: ExpenseList },
-        { path: '/clienste/gastos/:id', component: ExpenseDescription },
+        { path: '/cliente/gastos/:id', component: ExpenseDescription },
         { path: '/cliente/estadisticas', component: BarGraph },
         { path: '/cliente/gps', component: TravelList },
         { path: '/cliente/gps/:id', component: Map },

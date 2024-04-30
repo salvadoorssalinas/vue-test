@@ -38,7 +38,7 @@ export default {
 </script>
 
 <template>
-  <h2>Gastos de los viajes</h2>
+  <h2>Expenses</h2>
   <div class="list">
     <div class="list-content" v-for="trip in trips">
       <expense-card :trip="trip"></expense-card>

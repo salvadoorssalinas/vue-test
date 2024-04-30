@@ -30,14 +30,14 @@ export default {
 </script>
 
 <template>
-  <h1>Estadísticas</h1>
+  <h1>Statistics</h1>
   <div class="buttons">
     <div>
-      <pv-button label="Por mes"
+      <pv-button label="Per month"
                  @click="toggleMonthStatistics"
                  :style="{ backgroundColor: showMonthStatistics ? '#9AABDE' : 'white' }"
                  class="statistic-buttons"></pv-button>
-      <pv-button label="Por destino"
+      <pv-button label="Per destination"
                  @click="toggleDestinationStatistics"
                  :style="{ backgroundColor: showDestinationStatistics ? '#9AABDE' : 'white' }"
                  class="statistic-buttons"></pv-button>

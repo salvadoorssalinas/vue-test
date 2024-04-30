@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     formatDate(dateString) {
-      const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      const options = { day: '2-digit', month: '2-digit', year: 'numeric'  };
       return new Date(dateString).toLocaleDateString(undefined, options);
     }
   }
@@ -32,15 +32,15 @@ export default {
     <pv-card class="expense-card">
       <template #content>
         <div class="title">
-          <h2>{{trip.nombre}}</h2>
+          <h2>{{trip.name}}</h2>
         </div>
         <div class="content-info-preview">
-          <p>FECHA DE CARGA: {{ formatDate(trip.fechaCarga) }}</p>
-          <p>LUGAR DE CARGA: {{ trip.lugarCarga }}</p>
+          <p>FECHA DE CARGA: {{ formatDate(trip.loadDate) }}</p>
+          <p>LUGAR DE CARGA: {{ trip.loadLocation }}</p>
         </div>
       </template>
     </pv-card>
-    <pv-button label="Ver gastos" class="btn" @click="goToExpenses(trip.id)"></pv-button>
+    <pv-button label="View expenses" class="btn" @click="goToExpenses(trip.id)"></pv-button>
 </template>
 
 <style scoped>

@@ -50,7 +50,7 @@ export default {
 
 <template>
   <div class="main-top">
-    <h1>Ver viajes en progreso</h1>
+    <h1>View trips in progress</h1>
   </div>
   <div class="list">
     <travel-card v-for="trip in filteredTrips" :trip="trip"/>

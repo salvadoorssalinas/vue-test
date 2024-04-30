@@ -29,7 +29,7 @@ export default {
           response.data[0].viatics.amount,
           response.data[0].viatics.description,
       );
-      this.totalExpenses = this.expense.gasolina + this.expense.peajes + this.expense.viaticos;
+      this.totalExpenses = this.expense.fuel + this.expense.tolls + this.expense.viatics;
     });
     this.tripService.getTripByID(this.id).then(response => {
       this.logoURL = response.data[0].company.logoImage;
@@ -39,37 +39,37 @@ export default {
 </script>
 
 <template>
-  <h1>Viaje {{ id }}</h1>
+  <h1>Trip {{ id }}</h1>
   <div class="container">
-    <img :src="this.logoURL" alt="imagen de la empresa">
+    <img :src="this.logoURL" alt="company image">
     <div class="gastos">
       <div class="gasto">
         <div class="gasto-header">
-          <h2>GASOLINA DIESEL</h2>
-          <h2>S/. {{expense.gasolina}}</h2>
+          <h2>FUEL</h2>
+          <h2>S/. {{expense.fuel}}</h2>
         </div>
         <div class="gasto-descripcion">
-          <p>{{expense.gasolinaDescripcion}}</p>
+          <p>{{expense.fuelDescription}}</p>
         </div>
       </div>
 
       <div class="gasto">
         <div class="gasto-header">
-          <h2>PEAJES</h2>
-          <h2>S/. {{expense.peajes}}</h2>
+          <h2>TOLLS</h2>
+          <h2>S/. {{expense.tolls}}</h2>
         </div>
         <div class="gasto-descripcion">
-          <p>{{expense.peajesDescripcion}}</p>
+          <p>{{expense.tollsDescription}}</p>
         </div>
       </div>
 
       <div class="gasto">
         <div class="gasto-header">
-          <h2>VIATICOS</h2>
-          <h2>S/. {{expense.viaticos}}</h2>
+          <h2>VIATICS</h2>
+          <h2>S/. {{expense.viatics}}</h2>
         </div>
         <div class="gasto-descripcion">
-          <p>{{expense.viaticosDescripcion}}</p>
+          <p>{{expense.viaticsDescription}}</p>
         </div>
 
       </div>

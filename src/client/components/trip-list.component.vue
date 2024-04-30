@@ -57,13 +57,13 @@ export default {
           let tripProperty;
           switch (filterValue) {
             case 'name':
-              tripProperty = trip.nombre;
+              tripProperty = trip.name;
               break;
             case 'date':
-              tripProperty = trip.fechaCarga;
+              tripProperty = trip.loadDate;
               break;
             case 'place':
-              tripProperty = trip.lugarCarga;
+              tripProperty = trip.loadLocation;
               break;
             default:
               return true;
@@ -84,13 +84,13 @@ export default {
 
 <template>
   <div class="main-top">
-    <h1>Mis viajes anteriores</h1>
-    <pv-button style="background-color: #006400" >Exportar</pv-button>
+    <h1>Last Trips</h1>
+    <pv-button label="Export" style="background-color: #006400" ></pv-button>
   </div>
 
   <div class="container-search-bar">
     <div class="search-bar">
-      <input type="text" v-model="searchText" placeholder="Buscar viaje" />
+      <input type="text" v-model="searchText" placeholder="Search" />
     </div>
     <div class="buttons-group">
       <pv-button @click="filterTrips" style="background-color: transparent; border: none; color: black;">
@@ -126,7 +126,10 @@ h1{
 
 .p-button{
   height: 50px;
+  width: 150px;
   margin: auto 0;
+  border-radius: 5px;
+  font-family: Rubik, sans-serif;
 }
 .container-search-bar {
   display: flex;

@@ -17,10 +17,10 @@ export default {
   data() {
     return {
       chartData: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [
           {
-            label: 'Cantidad de Viajes',
+            label: 'Number of trips',
             backgroundColor: '#002E43', // Color de fondo de las barras
             borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de las barras
             borderWidth: 1,
@@ -33,7 +33,7 @@ export default {
         plugins: {
           title: {
             display: true,
-            text: 'Visualización de envíos por mes',
+            text: 'Visualization per month',
             font: {
               size: 20
             }
@@ -55,7 +55,7 @@ export default {
         this.chartData.datasets[0].data[monthIndex]++;
       });
     } else {
-      console.error('No se encontraron datos de viajes.');
+      console.error('Not trip data found.');
     }
   }
 };
