@@ -1,14 +1,68 @@
 <script>
 import { useRouter } from 'vue-router';
-import {ref} from "vue";
+import { ref, reactive } from "vue";
 import { useConfirm } from 'primevue/useconfirm';
+import { TripService } from '../services/trip.service.js'
 
 export default {
   name: "register-trip",
+  methods: {
+    triggerFileUploadLoad() {
+      this.$refs.fileInputLoad.click();
+    },
+    triggerFileUploadLogo() {
+      this.$refs.fileInputLogo.click();
+    },
+    handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.trip.cargo.loadImage = URL.createObjectURL(file);
+      }
+    },
+    handleFileUploadLogo(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.trip.company.logoImage = URL.createObjectURL(file);
+      }
+    },
+  },
   setup() {
     const router = useRouter();
     const confirm = useConfirm();
     const isVisible = ref(false);
+    const tripService = new TripService();
+    const trip = reactive({
+      id: "",
+      name: "",
+      driver: {
+        fullName: "",
+        DNI: "",
+        license: "",
+        contactNumber: ""
+      },
+      vehicle: {
+        model: "",
+        plate: "",
+        tractorPlate: "",
+        maxLoad: "",
+        volume: ""
+      },
+      cargo: {
+        type: "",
+        weight: "",
+        loadLocation: "",
+        loadImage: "",
+        loadDate: "",
+        unloadLocation: "",
+        unloadDate: ""
+      },
+      company: {
+        name: "",
+        ruc: "",
+        logoImage: ""
+      }
+    });
+
     const openDialog = () => {
       confirm.require({
         message: 'The data requested for the trip will be recorded. Are you sure you want to record it?',
@@ -18,6 +72,9 @@ export default {
         },
         onHide: () => {
           isVisible.value = false;
+        },
+        accept: () => {
+          tripService.saveTrip(trip);
         }
       });
     };
@@ -28,7 +85,8 @@ export default {
 
     return {
       openDialog,
-      goBack
+      goBack,
+      trip
     };
   }
 }
@@ -41,92 +99,105 @@ export default {
       <div class="grid-container-2-columns">
         <div>
           <p>Name</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.driver.fullName" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>DNI</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.driver.DNI"  style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <div class="grid-container-2-columns">
         <div>
           <p>Driver's license number</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.driver.license" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>Contact number</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.driver.contactNumber" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <h2>Vehicle</h2>
       <div class="grid-container-1-column">
         <div>
           <p>Model</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.vehicle.model" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <div class="grid-container-2-columns">
         <div>
           <p>Trailer plate</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.vehicle.plate" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>Tractor plate</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.vehicle.tractorPlate" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <div class="grid-container-2-columns">
         <div>
           <p>Maximum Capacity (kg)</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.vehicle.maxLoad" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>Volume (m^3)</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.vehicle.volume" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <h2>Load</h2>
       <div class="grid-container-2-columns">
         <div>
           <p>Type</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.cargo.type" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>Total Weight</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.cargo.weight" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <h2>Trip</h2>
       <div class="grid-container-2-columns">
         <div>
           <p>Load Location</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.cargo.loadLocation" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>Unload Location</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.cargo.unloadLocation" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <div class="grid-container-2-columns">
         <div>
           <p>Load Date</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.cargo.loadDate" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>Estimated Unload Date</p>
-          <pv-inputtext style="width: 100%;"></pv-inputtext>
+          <pv-inputtext v-model="trip.cargo.unloadDate" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <div class="grid-container-1-columns">
         <p>Load Evidence</p>
         <img src="../../assets/images/upload-image.jpg" height="250px">
         <div style="text-align: center; width: 20%; margin-left: 25px;">
-          <pv-button style="background-color:#006400;">Upload</pv-button>
+          <input type="file" ref="fileInputLoad" @change="handleFileUpload" style="display: none" />
+          <pv-button @click="triggerFileUploadLoad" style="background-color:#006400;">Upload</pv-button>
         </div>
       </div>
       <div class="grid-container-1-columns">
         <p>Client's Name</p>
-        <pv-inputtext style="width: 100%;"></pv-inputtext>
+        <pv-inputtext v-model="trip.company.name" style="width: 100%;"></pv-inputtext>
+      </div>
+      <div class="grid-container-1-columns">
+        <p>Client's Ruc</p>
+        <pv-inputtext v-model="trip.company.ruc" style="width: 100%;"></pv-inputtext>
+      </div>
+      <div class="grid-container-1-columns">
+        <p>Client's Logo</p>
+        <img src="../../assets/images/upload-image.jpg" height="250px">
+        <div style="text-align: center; width: 20%; margin-left: 25px;">
+          <input type="file" ref="fileInputLogo" @change="handleFileUploadLogo" style="display: none" />
+          <pv-button @click="triggerFileUploadLogo" style="background-color:#006400;">Upload</pv-button>
+        </div>
       </div>
       <div class="button">
         <pv-button @click="goBack" style="background-color: #006400; padding: 15px 45px;" >
