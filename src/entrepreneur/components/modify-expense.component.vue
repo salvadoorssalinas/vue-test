@@ -3,7 +3,7 @@
 import {ExpenseService} from "../../client/services/expense.service.js";
 
 export default {
-  name: "modify-expense.component",
+  name: "modify-expense",
   data() {
     return {
       id: this.$route.params.id,
@@ -50,6 +50,9 @@ export default {
       expenseService.setExpense(this.id, expense)
           .then(() => {
             alert('Changes saved successfully.');
+          })
+          .then(() => {
+            this.$router.push('/entrepreneur/register')
           });
     },
 
@@ -77,7 +80,7 @@ export default {
       </div>
       <div>
         <p>Diesel Gasoline - Details</p>
-        <pv-inputtext v-model="fuelDescription" style="width: 100%;"></pv-inputtext>
+        <pv-textarea v-model="fuelDescription" style="width: 100%;"></pv-textarea>
       </div>
     </div>
     <div class="grid-container-2-columns">
@@ -87,24 +90,24 @@ export default {
       </div>
       <div>
         <p>Toll - Details</p>
-        <pv-inputtext v-model="tollDescription" style="width: 100%;"></pv-inputtext>
+        <pv-textarea v-model="tollDescription" style="width: 100%;"></pv-textarea>
       </div>
     </div>
     <div class="grid-container-2-columns">
       <div>
-        <p>Per Diem - Amount</p>
+        <p>Viatics - Amount</p>
         <pv-inputtext v-model="viaticsAmount" style="width: 50%;"></pv-inputtext>
       </div>
       <div>
-        <p>Per Diem - Details</p>
-        <pv-inputtext v-model="viaticsDescription" style="width: 100%;"></pv-inputtext>
+        <p>Viatics - Details</p>
+        <pv-textarea v-model="viaticsDescription" style="width: 100%;"></pv-textarea>
       </div>
     </div>
     <div class="buttons">
-      <pv-button @click="goBack" style="background-color: #006400; padding: 25px 45px; position: absolute; bottom: 20px; left: 20px;" >
-        Back
+      <pv-button @click="goBack" style="background-color: #006400; padding: 15px 45px; position: absolute; bottom: 20px; left: 20px;" >
+        Cancel
       </pv-button>
-      <pv-button @click="saveChanges" style="background-color: #006400; padding: 25px 45px; position: absolute; bottom: 20px; right: 20px;" >
+      <pv-button @click="saveChanges" style="background-color: #006400; padding: 15px 45px; position: absolute; bottom: 20px; right: 20px;" >
         Save
       </pv-button>
     </div>
