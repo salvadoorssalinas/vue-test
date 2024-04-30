@@ -8,6 +8,10 @@ import TravelList from "../client/components/travel-list.component.vue";
 import Map from "../client/components/map.component.vue";
 import Registration from "../entrepreneur/components/registration.component.vue";
 import UserComponent from "../public/user.component.vue"
+import RegisterTripComponent from "../entrepreneur/components/register-trip.component.vue";
+import RegisterExpenseComponent from "../entrepreneur/components/register-expense.component.vue";
+import ModifyTripComponent from "../entrepreneur/components/modify-trip.component.vue";
+import ModifyExpenseComponent from "../entrepreneur/components/modify-expense.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -18,10 +22,14 @@ const router = createRouter({
         { path: '/cliente/historial/:id', component: TripDescription },
         { path: '/cliente/gastos', component: ExpenseList },
         { path: '/clienste/gastos/:id', component: ExpenseDescription },
-        { path: '/cliente/estadisticas', component: BarGraph},
-        { path: '/cliente/gps', component: TravelList},
+        { path: '/cliente/estadisticas', component: BarGraph },
+        { path: '/cliente/gps', component: TravelList },
         { path: '/cliente/gps/:id', component: Map },
         { path: '/empresario/registro', component: Registration },
+        { path: '/empresario/registro/viaje', component: RegisterTripComponent },
+        { path: '/empresario/registro/gasto', component: RegisterExpenseComponent },
+        { path: '/empresario/modificar/viaje', component: ModifyTripComponent },
+        { path: '/empresario/modificar/gasto', component: ModifyExpenseComponent },
         { path: '/empresario/historial', component: TripList },
         { path: '/empresario/gps', component: TravelList}
     ]

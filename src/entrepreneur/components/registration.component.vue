@@ -6,7 +6,7 @@ export default{
 </script>
 
 <template>
-<p>Registration Works!</p>
+  <p>registration works!!!</p>
 </template>
 
 <style scoped>
