@@ -9,7 +9,7 @@ export default {
     const router = useRouter();
 
     const goToBackStep = () => {
-      router.push('/empresario/registro/viaje');
+      router.go(-1);
     };
 
 

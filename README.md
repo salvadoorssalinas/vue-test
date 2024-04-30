@@ -19,7 +19,7 @@ fixtures/data.json
 ```
 And activate the fake api route with the command below:
 ```bash
-npx json-server data.json
+npx json-server fixtures/data.json
 ```
 
 ## Modules Installation
@@ -38,6 +38,10 @@ npm install vue-router@latest
 
 ```bash
 npm i vue-chartjs chart.js
+```
+
+```bash
+npm install vuex@next --save
 ```
 
 ## Leaflet (Map)

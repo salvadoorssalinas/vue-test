@@ -13,7 +13,7 @@ export default {
   setup(){
     const router = useRouter();
     const goToExpenses = (id) => {
-      router.push(`/cliente/gastos/${id}`);
+      router.push(`/client/expenses/${id}`);
     }
     return{
       goToExpenses
@@ -33,6 +33,7 @@ export default {
       <template #content>
         <div class="title">
           <h2>{{trip.name}}</h2>
+          <h3>ID: {{trip.id}}</h3>
         </div>
         <div class="content-info-preview">
           <p>FECHA DE CARGA: {{ formatDate(trip.loadDate) }}</p>
@@ -44,7 +45,7 @@ export default {
 </template>
 
 <style scoped>
-h2{
+h2, h3{
   font-family: Roboto, sans-serif;
   color: black;
 }

@@ -49,7 +49,7 @@ export default {
       };
       expenseService.setExpense(this.id, expense)
           .then(() => {
-            alert('Los cambios se han guardado con éxito.');
+            alert('Changes saved successfully.');
           });
     },
 

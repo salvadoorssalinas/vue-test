@@ -13,7 +13,7 @@ export default {
   setup(){
     const router = useRouter();
     const goToTrip = (id) => {
-      router.push(`/cliente/historial/${id}`);
+      router.push(`/client/history/${id}`);
     }
     return{
       goToTrip
@@ -35,6 +35,7 @@ export default {
       <template #content>
         <div class="title">
           <h2>{{trip.name}}</h2>
+          <h3>ID: {{trip.id}}</h3>
         </div>
         <div class="content-info-preview">
           <p>LOAD DATE: {{ formatDate(trip.loadDate) }}</p>
@@ -47,7 +48,7 @@ export default {
 </template>
 
 <style scoped>
-h2{
+h2, h3{
   font-family: Roboto, sans-serif;
   color: black;
 }

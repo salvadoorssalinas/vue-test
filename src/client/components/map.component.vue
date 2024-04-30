@@ -32,7 +32,7 @@ export default defineComponent({
     const router = useRouter();
 
     const goToAlerts = (id) => {
-      router.push(`/cliente/alertas/${id}`);
+      router.push(`/client/alerts/${id}`);
     }
     return{
       goToAlerts

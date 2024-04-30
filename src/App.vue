@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import HeaderToolbar from "./public/header.component.vue";
 import Sidebar from "./public/sidebar.component.vue";
 

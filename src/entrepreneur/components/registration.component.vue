@@ -6,19 +6,19 @@ export default {
     const router = useRouter();
 
     const registerTrip = () => {
-      router.push('/empresario/registro/viaje');
+      router.push('/entrepreneur/register/trip');
     };
 
     const modifyTrip = () => {
-      router.push('/empresario/modificar/viaje');
+      router.push('/entrepreneur/modify/trip');
     };
 
     const registerExpense = () => {
-      router.push('/empresario/registro/gasto');
+      router.push('/entrepreneur/register/expense');
     };
 
     const modifyExpense = () => {
-      router.push('/empresario/modificar/gasto');
+      router.push('/entrepreneur/modify/expense');
     };
 
     return {
@@ -35,26 +35,28 @@ export default {
   <div class="container">
     <pv-card class="card">
       <template v-slot:title>
-        <h2>Registrar mis Viajes</h2>
+        <h3>Register Trips</h3>
       </template>
       <template v-slot:content>
-        <p>Haga click en "Registrar" para iniciar con el registro de un nuevo viaje de transporte de su empresa</p>
+        <p>Click on "Register" to register a new transportation trip for your company.
+          Click on "Modify" to modify an existing transportation trip of your company</p>
       </template>
       <template v-slot:footer>
-        <pv-button class="register-button" @click="registerTrip">Registrar</pv-button>
-        <pv-button class="modify-button" @click="modifyTrip">Modificar</pv-button>
+        <pv-button class="register-button" @click="registerTrip">Register</pv-button>
+        <pv-button class="modify-button" @click="modifyTrip">Modify</pv-button>
       </template>
     </pv-card>
     <pv-card class="card">
       <template v-slot:title>
-        <h2>Registrar mis Gastos</h2>
+        <h3>Register Expense</h3>
       </template>
       <template v-slot:content>
-        <p>Haga click en "Registrar" para iniciar con el registro de un nuevo gasto de un viaje de transporte de su empresa</p>
+        <p>Click on "Register" to register a new expense for a transportation trip for your company.
+          Click on "Modify" to modify an existing expense for a transportation trip of your company</p>
       </template>
       <template v-slot:footer>
-        <pv-button class="register-button" @click="registerExpense">Registrar</pv-button>
-        <pv-button class="modify-button" @click="modifyExpense">Modificar</pv-button>
+        <pv-button class="register-button" @click="registerExpense">Register</pv-button>
+        <pv-button class="modify-button" @click="modifyExpense">Modify</pv-button>
       </template>
     </pv-card>
   </div>
@@ -80,9 +82,13 @@ export default {
 .register-button {
   margin-top: 20px;
   margin-right: 20px; /* Añadido margen a la derecha */
+  background-color: #006400;
+  border-color: #006400;
 }
 
 .modify-button {
   margin-top: 20px;
+  background-color: #d5ab22;
+  border-color: #d5ab22;
 }
 </style>

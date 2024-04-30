@@ -1,17 +1,22 @@
 <script>
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 export default {
   name: 'UserComponent',
   setup() {
     const router = useRouter();
-
+    const store = useStore();
     const goToClient = () => {
-      router.push('/cliente/historial');
+      router.push('/client');
+      store.commit('setIsClient', 1);
+      console.log(store.state.isClient);
     };
 
     const goToEntrepreneur = () => {
-      router.push('/empresario/registro');
+      router.push('/entrepreneur');
+      store.commit('setIsClient', 2);
+      console.log(store.state.isClient);
     };
 
     return {

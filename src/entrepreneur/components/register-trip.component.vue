@@ -7,7 +7,7 @@ export default {
     const router = useRouter();
 
     const goToNextStep = () => {
-      router.push('/empresario/registro2/viaje');
+      router.push('/entrepreneur/register2/trip');
     };
 
     return {

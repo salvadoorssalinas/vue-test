@@ -46,6 +46,12 @@ export default {
       <h1>{{ trip.name }}</h1>
       <div class="container-info">
         <p>
+          <strong>ID:</strong>
+          {{ trip.id }}
+        </p>
+      </div>
+      <div class="container-info">
+        <p>
           <strong>LOAD DATE:</strong>
           {{ trip.loadDate }}
         </p>

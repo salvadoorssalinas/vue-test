@@ -11,7 +11,7 @@ export default {
   },
   computed: {
     title() {
-      return this.$route.path.includes('gasto') ? 'Modify Expenses' : 'Modify Trips';
+      return this.$route.path.includes('expense') ? 'Modify Expenses' : 'Modify Trips';
     }
   },
   methods: {
@@ -20,20 +20,20 @@ export default {
       const expenseService = new ExpenseService();
       let response;
 
-      if (this.$route.path.includes('gasto')) {
+      if (this.$route.path.includes('expense')) {
         response = await expenseService.getExpensesByID(this.tripId);
-      } else if (this.$route.path.includes('viaje')) {
+      } else if (this.$route.path.includes('trip')) {
         response = await tripService.getTripByID(this.tripId);
       }
 
       if (response && response.data.length > 0){
-        if (this.$route.path.includes('gasto')) {
-          this.$router.push(`/empresario/modificar/gasto/${this.tripId}`);
-        } else if (this.$route.path.includes('viaje')) {
-          this.$router.push(`/empresario/modificar/viaje/${this.tripId}`);
+        if (this.$route.path.includes('expense')) {
+          this.$router.push(`/entrepreneur/modify/expense/${this.tripId}`);
+        } else if (this.$route.path.includes('trip')) {
+          this.$router.push(`/entrepreneur/modify/trip/${this.tripId}`);
         }
       } else {
-        alert('El ID ingresado no existe. Por favor, ingrese un ID válido');
+        alert('The ID does not exist. Please enter a valid ID.');
       }
     }
   }

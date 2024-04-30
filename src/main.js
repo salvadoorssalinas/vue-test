@@ -20,6 +20,9 @@ import ConfirmationService from 'primevue/confirmationservice';
 //Router
 import router from './router/index.js'
 
+// Store
+import store from './store/store.js'
+
 const app = createApp(App);
 app.use(PrimeVue, {ripple: true});
 app.component('pv-toolbar', Toolbar)
@@ -31,4 +34,5 @@ app.component('pv-inputtext', InputText)
 app.component('pv-confirm-dialog', ConfirmDialog)
 app.use(ConfirmationService);
 app.use(router);
+app.use(store)
 app.mount('#app')
