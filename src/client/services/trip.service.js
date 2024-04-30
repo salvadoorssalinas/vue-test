@@ -11,4 +11,7 @@ export class TripService {
     getTripByID(id) {
         return http.get(`trips?id=${id}`);
     }
+    setTrip(id, trip) {
+        return http.put(`trips/${id}`, trip);
+    }
 }

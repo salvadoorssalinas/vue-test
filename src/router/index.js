@@ -11,9 +11,10 @@ import UserComponent from "../public/user.component.vue"
 import RegisterTripComponent from "../entrepreneur/components/register-trip.component.vue";
 import RegisterTrip2Component from "../entrepreneur/components/register-trip-2.component.vue";
 import RegisterExpenseComponent from "../entrepreneur/components/register-expense.component.vue";
+import AlertList from "../client/components/alert-list.component.vue";
 import ModifyTripComponent from "../entrepreneur/components/modify-trip.component.vue";
 import ModifyExpenseComponent from "../entrepreneur/components/modify-expense.component.vue";
-import AlertList from "../client/components/alert-list.component.vue";
+import ModifyRequestIdComponent from "../entrepreneur/components/modify-request-id.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -32,8 +33,10 @@ const router = createRouter({
         { path: '/empresario/registro/viaje', component: RegisterTripComponent },
         { path: '/empresario/registro2/viaje', component: RegisterTrip2Component },
         { path: '/empresario/registro/gasto', component: RegisterExpenseComponent },
-        { path: '/empresario/modificar/viaje', component: ModifyTripComponent },
-        { path: '/empresario/modificar/gasto', component: ModifyExpenseComponent },
+        { path: '/empresario/modificar/viaje', component: ModifyRequestIdComponent },
+        { path: '/empresario/modificar/gasto', component: ModifyRequestIdComponent },
+        { path: '/empresario/modificar/viaje/:id', component: ModifyTripComponent },
+        { path: '/empresario/modificar/gasto/:id', component: ModifyExpenseComponent },
         { path: '/empresario/historial', component: TripList },
         { path: '/empresario/gps', component: TravelList}
     ]

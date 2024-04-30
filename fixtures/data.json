@@ -1,7 +1,7 @@
 {
   "trips": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Viaje #MA251",
       "driver": {
         "fullName": "Juan Perez",
@@ -32,7 +32,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Viaje #MA252",
       "driver": {
         "fullName": "Carlos Sanchez",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Viaje #MA253",
       "driver": {
         "fullName": "Pedro Rodriguez",
@@ -96,39 +96,39 @@
   ],
   "expenses": [
     {
-      "id": 1,
       "fuel": {
-        "amount": 297.00,
+        "amount": "300",
         "description": "Se utilizaron 66 litros de Gasolina Diesel para el recorrido de 175 km. El litro está S/. 4.50. Así que el total es: 66 x 4.50 = 297"
       },
       "toll": {
-        "amount": 275.00,
+        "amount": 275,
         "description": "Se pasaron por seis peajes en total, los costos respectivos son: 50, 47, 40, 40, 45, 53"
       },
       "viatics": {
-        "amount": 400.00 ,
+        "amount": 400,
         "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 200 cada día al conductor para cubrir hospedaje y alimentación"
-      }
+      },
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "fuel": {
-        "amount": 540.00,
+        "amount": 540,
         "description": "Se utilizaron 120 litros de gasolina diésel para el recorrido de 300 km. El precio por litro es S/. 4.50. Por lo tanto, el total es: 120 x 4.50 = 540"
       },
       "toll": {
-        "amount": 275.00,
+        "amount": 275,
         "description": "Se pasaron por seis peajes en total, los costos respectivos son: 50, 47, 40, 40, 45, 53"
       },
       "viatics": {
-        "amount": 400.00,
+        "amount": 400,
         "description": "El viaje tuvo una duración de 2 días. Se brindó S/. 200 cada día al conductor para cubrir hospedaje y alimentación."
       }
     }
   ],
   "ongoingTrips": [
     {
-      "id": 1,
+      "id": "1",
       "latitude": -12.096808507450856,
       "longitude": -76.99985340288825,
       "speed": 60,
@@ -147,18 +147,18 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "latitude": -11.979,
       "longitude": -77.0587,
       "speed": 70,
       "distance": 200,
-        "alerts": [
-            {
-            "type": "Retraso de entrega",
-            "description": "Debido a un accidente en la carretera, se ha retrasado la entrega en una hora",
-            "date": "2024-05-25T05:05:46Z"
-            }
-        ]
+      "alerts": [
+        {
+          "type": "Retraso de entrega",
+          "description": "Debido a un accidente en la carretera, se ha retrasado la entrega en una hora",
+          "date": "2024-05-25T05:05:46Z"
+        }
+      ]
     }
   ]
 }

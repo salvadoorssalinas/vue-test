@@ -8,4 +8,7 @@ export class ExpenseService {
     getExpensesByID(id) {
         return http.get(`expenses?id=${id}`);
     }
+    setExpense(id, expense) {
+        return http.put(`expenses/${id}`, expense);
+    }
 }
