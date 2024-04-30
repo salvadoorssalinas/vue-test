@@ -9,6 +9,7 @@ import Map from "../client/components/map.component.vue";
 import Registration from "../entrepreneur/components/registration.component.vue";
 import UserComponent from "../public/user.component.vue"
 import RegisterTripComponent from "../entrepreneur/components/register-trip.component.vue";
+import RegisterTrip2Component from "../entrepreneur/components/register-trip-2.component.vue";
 import RegisterExpenseComponent from "../entrepreneur/components/register-expense.component.vue";
 import ModifyTripComponent from "../entrepreneur/components/modify-trip.component.vue";
 import ModifyExpenseComponent from "../entrepreneur/components/modify-expense.component.vue";
@@ -29,6 +30,7 @@ const router = createRouter({
         { path: '/cliente/alertas/:id', component: AlertList },
         { path: '/empresario/registro', component: Registration },
         { path: '/empresario/registro/viaje', component: RegisterTripComponent },
+        { path: '/empresario/registro2/viaje', component: RegisterTrip2Component },
         { path: '/empresario/registro/gasto', component: RegisterExpenseComponent },
         { path: '/empresario/modificar/viaje', component: ModifyTripComponent },
         { path: '/empresario/modificar/gasto', component: ModifyExpenseComponent },

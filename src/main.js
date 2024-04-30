@@ -14,6 +14,9 @@ import Card from "primevue/card";
 import Dropdown from 'primevue/dropdown';
 import InputText from 'primevue/inputtext'
 
+import ConfirmDialog from 'primevue/confirmdialog';
+import ConfirmationService from 'primevue/confirmationservice';
+
 //Router
 import router from './router/index.js'
 
@@ -25,5 +28,7 @@ app.component('pv-sidebar', Sidebar)
 app.component('pv-card', Card)
 app.component('pv-dropdown', Dropdown)
 app.component('pv-inputtext', InputText)
+app.component('pv-confirm-dialog', ConfirmDialog)
+app.use(ConfirmationService);
 app.use(router);
 app.mount('#app')
