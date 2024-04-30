@@ -132,14 +132,33 @@
       "latitude": -12.096808507450856,
       "longitude": -76.99985340288825,
       "speed": 60,
-      "distance": 100
+      "distance": 100,
+      "alerts": [
+        {
+          "type": "Parada no programada",
+          "description": "Debido a una emergencia médica del conductor, se ha decidido hacer una parada no programada, se estima reanudar el trayecto aproximadamente en una hora",
+          "date": "2024-03-25T05:05:46Z"
+        },
+        {
+          "type": "Cambio de ruta",
+          "description": "Debido a un cierre de carretera, hemos ajustado la ruta de entrega hacia la “Ruta del Pacífico”",
+          "date": "2024-03-25T06:58:10Z"
+        }
+      ]
     },
     {
       "id": 3,
       "latitude": -11.979,
       "longitude": -77.0587,
       "speed": 70,
-      "distance": 200
+      "distance": 200,
+        "alerts": [
+            {
+            "type": "Retraso de entrega",
+            "description": "Debido a un accidente en la carretera, se ha retrasado la entrega en una hora",
+            "date": "2024-05-25T05:05:46Z"
+            }
+        ]
     }
   ]
 }
