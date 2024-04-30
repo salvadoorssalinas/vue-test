@@ -12,6 +12,7 @@ import RegisterTripComponent from "../entrepreneur/components/register-trip.comp
 import RegisterExpenseComponent from "../entrepreneur/components/register-expense.component.vue";
 import ModifyTripComponent from "../entrepreneur/components/modify-trip.component.vue";
 import ModifyExpenseComponent from "../entrepreneur/components/modify-expense.component.vue";
+import AlertList from "../client/components/alert-list.component.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -25,6 +26,7 @@ const router = createRouter({
         { path: '/cliente/estadisticas', component: BarGraph },
         { path: '/cliente/gps', component: TravelList },
         { path: '/cliente/gps/:id', component: Map },
+        { path: '/cliente/alertas/:id', component: AlertList },
         { path: '/empresario/registro', component: Registration },
         { path: '/empresario/registro/viaje', component: RegisterTripComponent },
         { path: '/empresario/registro/gasto', component: RegisterExpenseComponent },

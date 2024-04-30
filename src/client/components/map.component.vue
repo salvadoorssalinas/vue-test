@@ -1,4 +1,3 @@
-
 <script>
 import { defineComponent, onMounted, onBeforeMount } from 'vue'
 import 'leaflet/dist/leaflet.css'
@@ -6,6 +5,7 @@ import L from 'leaflet'
 import { Trip } from "../models/trip.entity.js";
 import {TripService} from "../services/trip.service.js";
 import {OnGoingTripService} from "../services/ongoing-trip.service.js";
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'LMap',
@@ -28,11 +28,18 @@ export default defineComponent({
       longitud: 0
     }
   },
-  created(){
+  setup(){
+    const router = useRouter();
 
+    const goToAlerts = (id) => {
+      router.push(`/cliente/alertas/${id}`);
+    }
+    return{
+      goToAlerts
+    };
   },
   mounted() {
-    var carIcon = L.icon({
+    const carIcon = L.icon({
       iconUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Car_icon_alone.png",
       iconSize: [50, 50],
       iconAnchor: [25, 50],
@@ -64,84 +71,66 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div id="mapContainer"></div>
-  <main>
-  <pv-card class="info-card">
-    <template #content>
-      <div class="content-info-preview">
-        <h1>Información del Viaje</h1>
-        <p><strong>Conductor:</strong> {{ conductor }}</p>
-        <p><strong>Placa:</strong> {{ placa }}</p>
-        <p><strong>Peso:</strong> {{ carga }} kg</p>
-        <p><strong>Velocidad:</strong> {{ velocidad }} km/h</p>
-        <p><strong>Distancia:</strong> {{ distancia }} km</p>
-        <p><strong>Latitud:</strong> {{ latitud }}</p>
-        <p><strong>Longitud:</strong> {{ longitud }}</p>
-      </div>
-    </template>
-  </pv-card>
-  </main>
+  <div class="container">
+    <div class="info-card">
+      <pv-card>
+        <template #content>
+          <div class="content">
+            <h1>Información del viaje</h1>
+            <p><strong>Conductor:</strong> {{ conductor }}</p>
+            <p><strong>Placa:</strong> {{ placa }}</p>
+            <p><strong>Peso:</strong> {{ carga }} kg</p>
+            <p><strong>Velocidad:</strong> {{ velocidad }} km/h</p>
+            <p><strong>Distancia:</strong> {{ distancia }} km</p>
+            <p><strong>Latitud:</strong> {{ latitud }}</p>
+            <p><strong>Longitud:</strong> {{ longitud }}</p>
+          </div>
+        </template>
+      </pv-card>
+      <pv-button label="Alertas" class="btn" @click="goToAlerts(id)"></pv-button>
+    </div>
+    <div id="mapContainer"></div>
+  </div>
+
+
 </template>
 
 <style scoped>
-  #mapContainer {
-    position: fixed;
-    top: 80px;
-    right: 0;
-    width: 50%;
-    height: calc(100vh - 50px);
-  }
-  main {
-    margin: 40px 0px 4px auto;
-    font-family: "Roboto", sans-serif;
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-  }
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
-  .info-card {
-    background-color: #FFA500;
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    height: auto;
-    max-width: 350px;
-    position: fixed;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 20px;
-    font-family: "Roboto", sans-serif;
-    z-index: 1000;
-  }
+.content{
+  color: black;
+}
 
-  .content-info-preview {
-    position: static;
-    margin: 0;
-  }
+.info-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  @media (max-width: 1050px) {
-    main {
-      margin: 40px 2px 4px 110px;
-      width: 100%;
-    }
-  }
+.p-card {
+  background-color: #FFA500;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  width: 70%;
+  min-height: 500px;
+  margin: 0 auto;
+}
 
-  @media (max-width: 750px) {
-    main {
-      margin: 40px 2px 4px 0;
-      width: 100%;
-    }
-    .content-info-preview {
-      margin: -94px 15px 0 210px;
-    }
-  }
+.btn{
+  font-family: Rubik, sans-serif;
+  background-color: #006400;
+  border-radius: 15px;
+  width: 25%;
+  margin-top: -20px;
+}
 
-  @media (max-width: 450px) {
-    .title {
-      margin-bottom: 30px;
-    }
-    .content-info-preview {
-      margin: -120px 15px 0 170px;
-    }
-  }
+#mapContainer {
+  height: calc(100vh - 81px);
+}
+
 </style>
