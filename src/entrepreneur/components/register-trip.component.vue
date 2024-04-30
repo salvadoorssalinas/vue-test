@@ -22,8 +22,13 @@ export default {
       });
     };
 
+    const goBack = () => {
+      router.go(-1);
+    };
+
     return {
-      openDialog
+      openDialog,
+      goBack
     };
   }
 }
@@ -72,7 +77,7 @@ export default {
       </div>
       <div class="grid-container-2-columns">
         <div>
-          <p>Maximum Ctapacity (kg)</p>
+          <p>Maximum Capacity (kg)</p>
           <pv-inputtext style="width: 100%;"></pv-inputtext>
         </div>
         <div>
@@ -113,20 +118,23 @@ export default {
         </div>
       </div>
       <div class="grid-container-1-columns">
-        <p>Client's Name</p>
-        <pv-inputtext style="width: 100%;"></pv-inputtext>
-      </div>
-      <div class="grid-container-1-columns">
         <p>Load Evidence</p>
-        <img src="../../assets/images/upload-image.jpg" height="100px">
-        <div style="text-align: center; width: 8%; margin-left: 8px;">
+        <img src="../../assets/images/upload-image.jpg" height="250px">
+        <div style="text-align: center; width: 20%; margin-left: 25px;">
           <pv-button style="background-color:#006400;">Upload</pv-button>
         </div>
       </div>
+      <div class="grid-container-1-columns">
+        <p>Client's Name</p>
+        <pv-inputtext style="width: 100%;"></pv-inputtext>
+      </div>
       <div class="button">
+        <pv-button @click="goBack" style="background-color: #006400; padding: 15px 45px;" >
+          Cancel
+        </pv-button>
         <pv-confirm-dialog id="confirm" />
         <pv-button @click="openDialog()" label="Confirm" :aria-expanded="visible" :aria-controls="visible ? 'confirm' : null"
-                   style="background-color: #006400; padding: 25px 45px;" >
+                   style="background-color: #006400; padding: 15px 45px;" >
           Register
         </pv-button>
       </div>
@@ -148,13 +156,9 @@ export default {
     gap: 10px;
   }
 
-  .grid-container-3-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-  }
   .button {
-    text-align: end;
+    display: flex;
+    justify-content: space-between;
     margin-top: 20px;
     font-size: 2em;
   }
