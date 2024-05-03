@@ -200,7 +200,7 @@ export default {
         </div>
       </div>
       <div class="button">
-        <pv-button @click="goBack" style="background-color: #006400; padding: 15px 45px;" >
+        <pv-button @click="goBack" style="background-color: #870a0a; padding: 15px 45px;" >
           Cancel
         </pv-button>
         <pv-confirm-dialog id="confirm" />

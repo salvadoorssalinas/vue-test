@@ -35,6 +35,9 @@ export default {
       } else {
         alert('The ID does not exist. Please enter a valid ID.');
       }
+    },
+    goBack(){
+      this.$router.go(-1);
     }
   }
 }
@@ -54,6 +57,7 @@ export default {
       </template>
       <template v-slot:footer>
         <div class="next-button">
+          <pv-button style="background-color: #870a0a; margin-right: 10px;" @click="goBack">Discard</pv-button>
           <pv-button @click="handleNextButton">Enter</pv-button>
         </div>
       </template>

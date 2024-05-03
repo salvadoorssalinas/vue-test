@@ -104,7 +104,7 @@ export default {
       </div>
     </div>
     <div class="buttons">
-      <pv-button @click="goBack" style="background-color: #006400; padding: 15px 45px; position: absolute; bottom: 20px; left: 20px;" >
+      <pv-button @click="goBack" style="background-color: #870a0a; padding: 15px 45px; position: absolute; bottom: 20px; left: 20px;" >
         Cancel
       </pv-button>
       <pv-button @click="saveChanges" style="background-color: #006400; padding: 15px 45px; position: absolute; bottom: 20px; right: 20px;" >

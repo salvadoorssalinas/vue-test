@@ -8,6 +8,9 @@ export class TripService {
     getTrips() {
         return http.get("trips");
     }
+    getTripsByID(id) {
+        return http.get(`trips/${id}`);
+    }
     addTrip(trip) {
         return http.post("trips", trip);
     }
@@ -28,5 +31,8 @@ export class TripService {
 
         // Envía la solicitud POST para agregar el nuevo viaje
         return this.addTrip(trip);
+    }
+    setTrip(id, trip) {
+        return http.put(`trips/${id}`, trip);
     }
 }
