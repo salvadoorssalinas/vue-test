@@ -21,9 +21,9 @@
         "weight": 3000,
         "loadLocation": "Av. La Playa km 2 - Ventanilla",
         "loadImage": "https://logisticaytransportedecarga.pe/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-18-at-7.38.54-AM-5-769x1024.jpeg",
-        "loadDate": "2024-03-24T05:05:46Z",
+        "loadDate": "2024-05-15",
         "unloadLocation": "Carretera Central km 141 - Morococha",
-        "unloadDate": "2024-03-26T06:58:10Z"
+        "unloadDate": "2024-07-23"
       },
       "company": {
         "name": "Transportes Semarfe S.A.C.",
@@ -52,9 +52,9 @@
         "weight": 4000,
         "loadLocation": "Av. El Sol km 3 - Callao",
         "loadImage": "https://logisticaytransportedecarga.pe/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-18-at-7.38.54-AM-5-769x1024.jpeg",
-        "loadDate": "2024-04-24T05:05:46Z",
+        "loadDate": "2024-04-25",
         "unloadLocation": "Carretera Central km 200 - La Oroya",
-        "unloadDate": "2024-04-26T06:58:10Z"
+        "unloadDate": "2024-04-26"
       },
       "company": {
         "name": "Transportes Semarfe S.A.C.",
@@ -83,9 +83,9 @@
         "weight": 5000,
         "loadLocation": "Av. La Marina km 5 - Callao",
         "loadImage": "https://logisticaytransportedecarga.pe/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-18-at-7.38.54-AM-5-769x1024.jpeg",
-        "loadDate": "2024-05-24T05:05:46Z",
+        "loadDate": "2024-05-24",
         "unloadLocation": "Carretera Central km 300 - La Oroya",
-        "unloadDate": "2024-05-26T06:58:10Z"
+        "unloadDate": "2024-05-26"
       },
       "company": {
         "name": "Transportes Semarfe S.A.C.",
@@ -97,7 +97,7 @@
   "expenses": [
     {
       "fuel": {
-        "amount": "300",
+        "amount": "299",
         "description": "Se utilizaron 66 litros de Gasolina Diesel para el recorrido de 175 km. El litro está S/. 4.50. Así que el total es: 66 x 4.50 = 297"
       },
       "toll": {

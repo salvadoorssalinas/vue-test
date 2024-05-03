@@ -35,6 +35,7 @@ export default {
 </script>
 
 <template>
+  <pv-button style="margin-top: 20px; margin-left: 10px;" @click="this.$router.go(-1);">Return</pv-button>
   <div>
     <h1>Alerts</h1>
     <div class="alerts">

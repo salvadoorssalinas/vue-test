@@ -69,14 +69,14 @@ export default {
     <h2>Trip - ID</h2>
     <div class="grid-container-1-column">
       <div>
-        <pv-inputtext v-model="id" readonly style="width: 8%;"></pv-inputtext>
+        <pv-inputtext v-model="id" disabled style="width: 8%;"></pv-inputtext>
       </div>
     </div>
     <h2>Expenses</h2>
     <div class="grid-container-2-columns">
       <div>
         <p>Diesel Gasoline - Amount</p>
-        <pv-inputtext v-model="fuelAmount" style="width: 50%;"></pv-inputtext>
+        <pv-inputtext type="number" v-model="fuelAmount" style="width: 50%;"></pv-inputtext>
       </div>
       <div>
         <p>Diesel Gasoline - Details</p>
@@ -86,7 +86,7 @@ export default {
     <div class="grid-container-2-columns">
       <div>
         <p>Toll - Amount</p>
-        <pv-inputtext v-model="tollAmount" style="width: 50%;"></pv-inputtext>
+        <pv-inputtext type="number" v-model="tollAmount" style="width: 50%;"></pv-inputtext>
       </div>
       <div>
         <p>Toll - Details</p>

@@ -90,31 +90,31 @@ export default {
     <div class="grid-container-2-columns">
       <div>
         <p>Diesel Gasoline - Amount</p>
-        <pv-inputtext v-model="expense.fuelAmount" style="width: 50%;" required></pv-inputtext>
+        <pv-inputtext v-model="expense.fuel.amount" style="width: 50%;" required></pv-inputtext>
       </div>
       <div>
         <p>Diesel Gasoline - Details</p>
-        <pv-textarea v-model="expense.fuelDescription" style="width: 100%;" required></pv-textarea>
+        <pv-textarea v-model="expense.fuel.description" style="width: 100%;" required></pv-textarea>
       </div>
     </div>
     <div class="grid-container-2-columns">
       <div>
         <p>Toll - Amount</p>
-        <pv-inputtext v-model="expense.tollAmount" style="width: 50%;" required></pv-inputtext>
+        <pv-inputtext v-model="expense.toll.amount" style="width: 50%;" required></pv-inputtext>
       </div>
       <div>
         <p>Toll - Details</p>
-        <pv-textarea v-model="expense.tollDescription" style="width: 100%;" required></pv-textarea>
+        <pv-textarea v-model="expense.toll.description" style="width: 100%;" required></pv-textarea>
       </div>
     </div>
     <div class="grid-container-2-columns">
       <div>
         <p>Viatics - Amount</p>
-        <pv-inputtext v-model="expense.viaticsAmount" style="width: 50%;" required></pv-inputtext>
+        <pv-inputtext v-model="expense.viatics.amount" style="width: 50%;" required></pv-inputtext>
       </div>
       <div>
         <p>Viatics - Details</p>
-        <pv-textarea v-model="expense.viaticsDescription" style="width: 100%;" required></pv-textarea>
+        <pv-textarea v-model="expense.viatics.description" style="width: 100%;" required></pv-textarea>
       </div>
     </div>
     <div class="button">

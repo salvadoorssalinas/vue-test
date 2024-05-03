@@ -99,6 +99,7 @@ export default {
           logoImage: this.company.logoImage
         }
       };
+      console.log(tripA);
       const tripService = new TripService();
       tripService.setTrip(this.id, tripA)
           .then(() => {
@@ -178,11 +179,11 @@ export default {
     <div class="grid-container-2-columns">
       <div>
         <p>Maximum Capacity (kg)</p>
-        <pv-inputtext v-model="vehicle.maxLoad" style="width: 100%;"></pv-inputtext>
+        <pv-inputtext type="number" v-model="vehicle.maxLoad" style="width: 100%;"></pv-inputtext>
       </div>
       <div>
         <p>Volume (m^3)</p>
-        <pv-inputtext v-model="vehicle.volume" style="width: 100%;"></pv-inputtext>
+        <pv-inputtext type="number" v-model="vehicle.volume" style="width: 100%;"></pv-inputtext>
       </div>
     </div>
     <h2>Load</h2>
@@ -193,7 +194,7 @@ export default {
       </div>
       <div>
         <p>Total Weight</p>
-        <pv-inputtext v-model="cargo.weight" style="width: 100%;"></pv-inputtext>
+        <pv-inputtext type="number" v-model="cargo.weight" style="width: 100%;"></pv-inputtext>
       </div>
     </div>
     <h2>Trip</h2>
@@ -210,11 +211,11 @@ export default {
     <div class="grid-container-2-columns">
       <div>
         <p>Load Date</p>
-        <pv-inputtext v-model="cargo.loadDate" style="width: 100%;"></pv-inputtext>
+        <pv-inputtext type="date" v-model="cargo.loadDate" style="width: 100%;"></pv-inputtext>
       </div>
       <div>
         <p>Estimated Unload Date</p>
-        <pv-inputtext v-model="cargo.unloadDate" style="width: 100%;"></pv-inputtext>
+        <pv-inputtext type="date" v-model="cargo.unloadDate" style="width: 100%;"></pv-inputtext>
       </div>
     </div>
     <div class="grid-container-1-columns">

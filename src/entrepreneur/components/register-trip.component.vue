@@ -64,10 +64,11 @@ export default {
     });
 
     const openDialog = () => {
-      if (!trip.id || !trip.name || !trip.driver.fullName || !trip.driver.DNI || !trip.driver.license || !trip.driver.contactNumber ||
+      console.log(trip);
+      if (!trip.driver.fullName || !trip.driver.DNI || !trip.driver.license || !trip.driver.contactNumber ||
           !trip.vehicle.model || !trip.vehicle.plate || !trip.vehicle.tractorPlate || !trip.vehicle.maxLoad || !trip.vehicle.volume ||
-          !trip.cargo.type || !trip.cargo.weight || !trip.cargo.loadLocation || !trip.cargo.loadImage || !trip.cargo.loadDate ||
-          !trip.cargo.unloadLocation || !trip.cargo.unloadDate || !trip.company.name || !trip.company.ruc || !trip.company.logoImage) {
+          !trip.cargo.type || !trip.cargo.weight || !trip.cargo.loadLocation  || !trip.cargo.loadDate ||
+          !trip.cargo.unloadLocation || !trip.cargo.unloadDate || !trip.company.name || !trip.company.ruc) {
         alert('All fields are required');
         return;
       }
@@ -145,11 +146,11 @@ export default {
       <div class="grid-container-2-columns">
         <div>
           <p>Maximum Capacity (kg)</p>
-          <pv-inputtext v-model="trip.vehicle.maxLoad" style="width: 100%;"></pv-inputtext>
+          <pv-inputtext type="number" v-model="trip.vehicle.maxLoad" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>Volume (m^3)</p>
-          <pv-inputtext v-model="trip.vehicle.volume" style="width: 100%;"></pv-inputtext>
+          <pv-inputtext type="number" v-model="trip.vehicle.volume" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <h2>Load</h2>
@@ -160,7 +161,7 @@ export default {
         </div>
         <div>
           <p>Total Weight</p>
-          <pv-inputtext v-model="trip.cargo.weight" style="width: 100%;"></pv-inputtext>
+          <pv-inputtext type="number" v-model="trip.cargo.weight" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <h2>Trip</h2>
@@ -177,11 +178,11 @@ export default {
       <div class="grid-container-2-columns">
         <div>
           <p>Load Date</p>
-          <pv-inputtext v-model="trip.cargo.loadDate" style="width: 100%;"></pv-inputtext>
+          <pv-inputtext type="date" v-model="trip.cargo.loadDate" style="width: 100%;"></pv-inputtext>
         </div>
         <div>
           <p>Estimated Unload Date</p>
-          <pv-inputtext v-model="trip.cargo.unloadDate" style="width: 100%;"></pv-inputtext>
+          <pv-inputtext type="date" v-model="trip.cargo.unloadDate" style="width: 100%;"></pv-inputtext>
         </div>
       </div>
       <div class="grid-container-1-columns">
