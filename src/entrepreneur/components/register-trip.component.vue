@@ -184,15 +184,15 @@ export default {
         </div>
       </div>
       <div class="grid-container-1-columns">
-        <p>Client's Name</p>
+        <p>Company Name</p>
         <pv-inputtext v-model="trip.company.name" style="width: 100%;"></pv-inputtext>
       </div>
       <div class="grid-container-1-columns">
-        <p>Client's Ruc</p>
+        <p>Company Ruc</p>
         <pv-inputtext v-model="trip.company.ruc" style="width: 100%;"></pv-inputtext>
       </div>
       <div class="grid-container-1-columns">
-        <p>Client's Logo</p>
+        <p>Company Logo</p>
         <img src="../../assets/images/upload-image.jpg" height="250px">
         <div style="text-align: center; width: 20%; margin-left: 25px;">
           <input type="file" ref="fileInputLogo" @change="handleFileUploadLogo" style="display: none" />
