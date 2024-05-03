@@ -28,7 +28,10 @@ export default {
     });
 
     const openDialog = () => {
-      console.log(expense);
+      if (!expense.id || !expense.fuel.amount || !expense.toll.amount || !expense.viatics.amount) {
+        alert('All fields are required');
+        return;
+      }
       confirm.require({
         message: 'The data requested for the expense will be recorded. Are you sure you want to record it?',
         header: 'Register Expense',
@@ -39,10 +42,23 @@ export default {
           isVisible.value = false;
         },
         accept: () => {
-          expenseService.getExpensesByID()
-          expenseService.addExpense(expense);
-          alert('Expense registered successfully');
-          goBack();
+          if (expense.id) {
+            expenseService.getExpensesByID(expense.id)
+                .then(response => {
+                  if (response.data.length > 0) {
+                    alert('An expense with this trip ID already exists. You can change the expense with the Modify option.');
+                  } else {
+                    expenseService.addExpense(expense);
+                    alert('Expense registered successfully');
+                    goBack();
+                  }
+                })
+                .catch(error => {
+                  console.error('Error getting expenses by ID:', error);
+                });
+          } else {
+            console.error('Expense ID is not defined');
+          }
         }
       });
     };
@@ -67,38 +83,38 @@ export default {
     <h2>Trip - ID</h2>
     <div class="grid-container-1-column">
       <div>
-        <pv-inputtext v-model="expense.id" style="width: 8%;"></pv-inputtext>
+        <pv-inputtext v-model="expense.id" style="width: 8%;" required></pv-inputtext>
       </div>
     </div>
     <h2>Expenses</h2>
     <div class="grid-container-2-columns">
       <div>
         <p>Diesel Gasoline - Amount</p>
-        <pv-inputtext v-model="expense.fuelAmount" style="width: 50%;"></pv-inputtext>
+        <pv-inputtext v-model="expense.fuelAmount" style="width: 50%;" required></pv-inputtext>
       </div>
       <div>
         <p>Diesel Gasoline - Details</p>
-        <pv-textarea v-model="expense.fuelDescription" style="width: 100%;"></pv-textarea>
+        <pv-textarea v-model="expense.fuelDescription" style="width: 100%;" required></pv-textarea>
       </div>
     </div>
     <div class="grid-container-2-columns">
       <div>
         <p>Toll - Amount</p>
-        <pv-inputtext v-model="expense.tollAmount" style="width: 50%;"></pv-inputtext>
+        <pv-inputtext v-model="expense.tollAmount" style="width: 50%;" required></pv-inputtext>
       </div>
       <div>
         <p>Toll - Details</p>
-        <pv-textarea v-model="expense.tollDescription" style="width: 100%;"></pv-textarea>
+        <pv-textarea v-model="expense.tollDescription" style="width: 100%;" required></pv-textarea>
       </div>
     </div>
     <div class="grid-container-2-columns">
       <div>
         <p>Viatics - Amount</p>
-        <pv-inputtext v-model="expense.viaticsAmount" style="width: 50%;"></pv-inputtext>
+        <pv-inputtext v-model="expense.viaticsAmount" style="width: 50%;" required></pv-inputtext>
       </div>
       <div>
         <p>Viatics - Details</p>
-        <pv-textarea v-model="expense.viaticsDescription" style="width: 100%;"></pv-textarea>
+        <pv-textarea v-model="expense.viaticsDescription" style="width: 100%;" required></pv-textarea>
       </div>
     </div>
     <div class="button">

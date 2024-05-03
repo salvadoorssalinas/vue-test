@@ -64,6 +64,13 @@ export default {
     });
 
     const openDialog = () => {
+      if (!trip.id || !trip.name || !trip.driver.fullName || !trip.driver.DNI || !trip.driver.license || !trip.driver.contactNumber ||
+          !trip.vehicle.model || !trip.vehicle.plate || !trip.vehicle.tractorPlate || !trip.vehicle.maxLoad || !trip.vehicle.volume ||
+          !trip.cargo.type || !trip.cargo.weight || !trip.cargo.loadLocation || !trip.cargo.loadImage || !trip.cargo.loadDate ||
+          !trip.cargo.unloadLocation || !trip.cargo.unloadDate || !trip.company.name || !trip.company.ruc || !trip.company.logoImage) {
+        alert('All fields are required');
+        return;
+      }
       confirm.require({
         message: 'The data requested for the trip will be recorded. Are you sure you want to record it?',
         header: 'Register Trip',
