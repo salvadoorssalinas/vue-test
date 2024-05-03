@@ -71,6 +71,7 @@ export default defineComponent({
 })
 </script>
 <template>
+  <pv-button style="margin-top: 20px; margin-left: 10px;" @click="this.$router.go(-1);">Return</pv-button>
   <div class="container">
     <div class="info-card">
       <pv-card>
@@ -131,6 +132,19 @@ export default defineComponent({
 
 #mapContainer {
   height: calc(100vh - 81px);
+}
+
+@media (max-width: 1000px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+  .info-card{
+    margin-top: 20px;
+  }
+  #mapContainer {
+    height: 500px;
+  }
 }
 
 </style>

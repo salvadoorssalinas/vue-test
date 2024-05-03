@@ -135,12 +135,13 @@ h1{
   display: flex;
   text-align: center;
   justify-content: center;
+  width: 100%;
 }
 
 .search-bar input {
   font-family: Roboto, sans-serif;
-  font-size: 24px;
-  width: 650px;
+  font-size: 20px;
+  width: 40vw;
   height: 45px;
   padding: 10px;
   border: black 1px solid;
@@ -150,7 +151,15 @@ h1{
 .buttons-group {
   display: flex;
   justify-content: space-between;
-  margin-left: 20px;
+  width: 10%;
+  margin-right: 10px;
+}
+
+.main-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
 }
 
 @media (min-width: 1550px) {
@@ -159,7 +168,6 @@ h1{
     margin-left: 500px;
   }
 }
-
 
 
 </style>

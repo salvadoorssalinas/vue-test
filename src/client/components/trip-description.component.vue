@@ -37,6 +37,7 @@ export default {
 </script>
 
 <template>
+  <pv-button style="margin-top: 20px; margin-left: 10px;" @click="this.$router.go(-1);">Return</pv-button>
   <div class="container-general">
     <div class="evidence">
       <h2>Evidence</h2>
@@ -109,15 +110,17 @@ export default {
 </template>
 
 <style scoped>
+
 .container-general {
-  margin-top: 20px;
+  margin: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .container-general img {
-  margin-right: 200px;
+  width: 70%;
 }
 
 .container-general h1 {
@@ -126,14 +129,31 @@ export default {
 .container-info-general {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .container-info {
   background-color: #FFA500;
-  width: 721px;
+  width: 80%;
   margin-bottom: 10px;
 }
 
 .container-info p {
   padding: 0 10px;
+}
+
+@media (min-width: 1300px) {
+  .container-general {
+    flex-direction: row;
+  }
+
+  .container-general img {
+    margin-right: 200px;
+    margin-bottom: 0;
+  }
+
+  .container-info {
+    width: 721px;
+  }
 }
 </style>

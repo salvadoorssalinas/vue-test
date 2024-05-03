@@ -41,6 +41,8 @@ export default {
 </script>
 
 <template>
+  <pv-button style="margin-top: 20px; margin-left: 10px;" @click="this.$router.go(-1);">Return</pv-button>
+
   <h1>{{name}} - ID: {{ id }}</h1>
   <div class="container">
     <img :src="this.logoURL" alt="company image">
@@ -122,5 +124,11 @@ export default {
     background-color: #FFCA6A;
     padding: 5px;
     min-height: 75px;
+  }
+
+  @media (max-width: 768px){
+    .container{
+      grid-template-columns: 1fr;
+    }
   }
 </style>

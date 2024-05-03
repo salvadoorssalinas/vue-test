@@ -31,8 +31,8 @@ export default {
   <div class="user-component">
     <pv-card>
       <template #content>
-        <pv-button @click="goToClient">Cliente</pv-button>
-        <pv-button @click="goToEntrepreneur">Empresario</pv-button>
+        <pv-button @click="goToClient">Client</pv-button>
+        <pv-button @click="goToEntrepreneur">Entrepreneur</pv-button>
       </template>
     </pv-card>
   </div>

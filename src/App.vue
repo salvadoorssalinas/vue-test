@@ -1,6 +1,5 @@
 <script setup>
 import { computed, ref } from "vue";
-import HeaderToolbar from "./public/header.component.vue";
 import Sidebar from "./public/sidebar.component.vue";
 
 const visible = ref(false);
@@ -12,8 +11,7 @@ const toggleSidebar = () => {
 </script>
 
 <template>
-  <header-toolbar :toggleSidebar="toggleSidebar"/>
-  <sidebar :visible="visible" />
+  <sidebar :toggleSidebar="toggleSidebar" :visible="visible" />
   <router-view></router-view>
 </template>
 

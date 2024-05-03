@@ -7,10 +7,19 @@ const props = defineProps({
   visible: {
     type: Boolean,
     default: false
+  },
+  toggleSidebar: {
+    type: Function,
+    default: () => {}
   }
 });
 
 const localVisible = ref(props.visible);
+const togglesidebar = () => {
+  localVisible.value = !localVisible.value;
+  props.toggleSidebar();
+};
+
 let store = useStore();
 let isClient = computed(() => store.state.isClient)
 
@@ -19,19 +28,16 @@ const logOut = () => {
   console.log(store.state.isClient);
 };
 
-watch(() => props.visible, (newValue) => {
-  localVisible.value = newValue;
-});
 
 </script>
 
 <template>
   <pv-sidebar v-model:visible="localVisible" header="Menu">
     <template #header>
-      <h1 id="sidebar-title">CargoApp</h1>
+      <h1 class="sidebar-title">CargoApp</h1>
     </template>
     <template #closeicon>
-      <i class="pi pi-times" style="font-size: 2rem; color: #686f75" />
+      <i class="pi pi-times" style="font-size: 2rem; color: #686f75" @click="togglesidebar"/>
     </template>
     <ul>
       <li v-if="isClient === 1"><router-link to="/client/history">Record</router-link></li>
@@ -54,6 +60,22 @@ watch(() => props.visible, (newValue) => {
     </div>
 
   </pv-sidebar>
+  <pv-toolbar id="toolbar-header">
+    <template #start>
+      <pv-button class="sidebar-button" @click="togglesidebar">
+        <i class="pi pi-bars" style="font-size: 2rem; color: white" />
+      </pv-button>
+    </template>
+    <template #center>
+      <img src="../assets/images/logo.png" alt="CargoApp logo">
+      <h1>CargoApp</h1>
+    </template>
+    <template #end>
+      <pv-button class="config-button">
+        <i class="pi pi-cog" style="font-size: 2rem; color: white" />
+      </pv-button>
+    </template>
+  </pv-toolbar>
 </template>
 
 <style scoped>
@@ -89,5 +111,40 @@ ul li a:hover{
   padding-top: 150px;
   height: 50px;
 }
+
+#toolbar-header{
+  background-color: #1E3A8A;
+  border : none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.config-button {
+  background-color: transparent;
+  border: none;
+  margin-right: 50px;
+}
+
+.sidebar-button {
+  background-color: transparent;
+  border: none;
+  margin-left: 10px;
+}
+
+img {
+  height: 50px;
+  margin-right: 10px;
+}
+h1 {
+  font-family: Rubik, sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 32px;
+}
+
+.sidebar-title {
+  color: black;
+}
+
 
 </style>
