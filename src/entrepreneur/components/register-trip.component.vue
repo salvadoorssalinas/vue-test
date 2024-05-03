@@ -75,6 +75,8 @@ export default {
         },
         accept: () => {
           tripService.saveTrip(trip);
+          alert('Trip registered successfully');
+          goBack();
         }
       });
     };

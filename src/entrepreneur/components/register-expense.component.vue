@@ -28,6 +28,7 @@ export default {
     });
 
     const openDialog = () => {
+      console.log(expense);
       confirm.require({
         message: 'The data requested for the expense will be recorded. Are you sure you want to record it?',
         header: 'Register Expense',
@@ -38,17 +39,10 @@ export default {
           isVisible.value = false;
         },
         accept: () => {
-          // verify if it already exists
-          expenseService.getExpensesByID(expense.id)
-              .then(response => {
-                console.log(response);
-                const expense = response.data;
-                if (expense) {
-                  alert('Expenses for this trip already exist. To change expenses on this trip, please select the option Modify Expense and enter the trip ID');
-                } else {
-                  expenseService.saveExpense(expense);
-                }
-              });
+          expenseService.getExpensesByID()
+          expenseService.addExpense(expense);
+          alert('Expense registered successfully');
+          goBack();
         }
       });
     };
